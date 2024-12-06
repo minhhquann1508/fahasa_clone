@@ -1,0 +1,36 @@
+body {
+    left: 0;
+    top: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    display: block;
+    text-decoration: none !important;
+    color: black;
+}
+
+:root {
+	--white : #fff;
+    --primary: #C92127;
+    --secondary: #B70909;
+    --third: #FF6C6B;
+    --third: #FCDDEF;
+}
+
+
+.text-s {
+    font-size: 13px;
+}
+.text-m {
+    font-size: 14px;
+}
+.text-l {
+    font-size: 16px;
+}

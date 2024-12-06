@@ -23,6 +23,7 @@
 
 <body>
     <main>
+        <?php include_once '_header.php' ?>
         <?php include_once $main_view ?>
     </main>
 </body>
