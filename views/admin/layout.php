@@ -22,9 +22,19 @@
 </head>
 
 <body>
-    <main>
-        <?php include_once $main_view ?>
-    </main>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-2">
+                <?php include_once '_sidebar.php' ?>
+            </div>
+            <div class="col-10">
+                <?php include_once '_header.php' ?>
+                <main>
+                    <?php include_once $main_view ?>
+                </main>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
