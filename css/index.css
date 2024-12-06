@@ -26,10 +26,13 @@ a {
     --primary: #C92127;
     --secondary: #B70909;
     --third: #FF6C6B;
-    --third: #FCDDEF;
+    --fourth: #FCDDEF;
+    --greyD: #646464;
 }
 
-
+.text-xs {
+    font-size: 12px;
+}
 .text-s {
     font-size: 13px;
 }
