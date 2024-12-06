@@ -4,17 +4,17 @@
             <img src="./img/top_banner.webp" height="auto" width="100%">
         </div>
     </div>
-    <div style="background-color: white;">
+    <div class="mx-auto" style="background-color: white;width:1230px" >
         <div class="container">
             <div class="d-flex align-items-center justify-content-between" style="height: 68px;">
                 <div>
                     <img src="./img/logo.webp" style="width:220px; vertical-align: middle;">
                 </div>
-                <div>
-                    <i class="fa-solid fa-camera" style="color: var(--greyD)"></i>
-                    <i class="fa-solid fa-angle-down" style="color: var(--greyD)"></i>
-                </div>
-                <div>
+                <div class="d-flex gap-2">
+                    <div class="d-flex align-items-center gap-1">
+                        <img src="./img/menu_red.svg" style="color: var(--greyD);">
+                        <i class="fa-solid fa-angle-down" style="color: var(--greyD)"></i>
+                    </div>
                 <div class="input-group">
                     <div class="input-group">
                     <input type="text" class="form-control rounded" placeholder="Recipient's username" style="width: 585px;height:40px">
@@ -25,16 +25,15 @@
                 </div>
                 </div>
                 <div class="d-flex gap-3">
-                    <div class="d-flex flex-column text-center" style="color: var(--greyD)">
-                        <img src="./" alt="">
+                    <div class="d-flex flex-column text-center gap-1" style="color: var(--greyD)">
                         <i class="fa-regular fa-bell "></i>
                         <span class="text-xs">Thông báo</span>
                     </div>
-                    <div class="d-flex flex-column text-center" style="color: var(--greyD)" >
+                    <div class="d-flex flex-column text-center gap-1" style="color: var(--greyD)" >
                         <i class="fa-solid fa-cart-shopping"></i>
                         <span class="text-xs">Giỏ hàng</span>
                     </div>
-                    <div class="d-flex flex-column text-center" style="color: var(--greyD)">
+                    <div class="d-flex flex-column text-center gap-1" style="color: var(--greyD)">
                         <i class="fa-regular fa-user"></i>
                         <span class="text-xs">Tài khoản</span>
                     </div>
