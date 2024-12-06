@@ -16,7 +16,6 @@ li {
 }
 
 a {
-    display: block;
     text-decoration: none !important;
     color: black;
 }
