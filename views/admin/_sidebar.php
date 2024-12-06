@@ -18,8 +18,8 @@
     <ul class="mt-3">
         <?php 
             foreach ($list as $item) {
-                echo '<li style="border-bottom: 1px solid #ccc;" class="px-3 py-2">
-                        <a href="">
+                echo '<li style="border-bottom: 1px solid #ccc;" class="p-3">
+                        <a href="" class="d-block">
                             <i class="'.$item['icon'].' me-1"></i>
                             '.$item['label'].'
                         </a>

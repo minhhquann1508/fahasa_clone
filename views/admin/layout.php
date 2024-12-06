@@ -24,12 +24,12 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-2 px-0" style="border-right: 1px solid #ccc;">
+            <div class="col-2 px-0" style="border-right: 1px solid #ccc; min-height: 100vh;">
                 <?php include_once '_sidebar.php' ?>
             </div>
             <div class="col-10 px-0">
                 <?php include_once '_header.php' ?>
-                <main class="px-3">
+                <main class="px-3 py-3">
                     <?php include_once $main_view ?>
                 </main>
             </div>
