@@ -13,7 +13,6 @@ $data['carousel_img'] = [
 ];
 
 $data['carousel_banner'] = [
-
 ]
 ?>
 
@@ -63,16 +62,16 @@ $data['carousel_banner'] = [
     </div>
     <div class="row mt-4">
         <div class="col-3">
-            <img src="https://placehold.co/600x400/png" alt="" class="rounded" height="152px" width="100%">
+            <img src="https://placehold.co/600x400/png" alt="" class="rounded" height="200px" width="100%">
         </div>
         <div class="col-3">
-            <img src="https://placehold.co/600x400/png" alt="" class="rounded" height="152px" width="100%">
+            <img src="https://placehold.co/600x400/png" alt="" class="rounded" height="200px" width="100%">
         </div>
         <div class="col-3">
-            <img src="https://placehold.co/600x400/png" alt="" class="rounded" height="152px" width="100%">
+            <img src="https://placehold.co/600x400/png" alt="" class="rounded" height="200px" width="100%">
         </div>
         <div class="col-3">
-            <img src="https://placehold.co/600x400/png" alt="" class="rounded" height="152px" width="100%">
+            <img src="https://placehold.co/600x400/png" alt="" class="rounded" height="200px" width="100%">
         </div>
     </div>
 </div>
