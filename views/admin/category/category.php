@@ -16,6 +16,7 @@
         </button>
     </div>
     <?php include_once '_add_modal.php' ?>
+    <?php include_once '_update_modal.php' ?>
 </div>
 
 <section>
@@ -39,12 +40,12 @@
                             <td>'.($index + 1).'</td>
                             <td>'.$category['name'].'</td>
                             <td>
-                                <img class="shadow rounded-circle" width="60" height="60" src="'.$category['thumbnail'].'" alt="">
+                                <img class="shadow" width="60" height="60" src="'.$category['thumbnail'].'" alt="">
                             </td>
                             <td>'.$category['slug'].'</td>
                             <td class="text-center">'.$is_show.'</td>
                             <td class="text-center">
-                                <button class="btn btn-info"><i class="fa-regular fa-pen-to-square"></i></button>
+                                <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#update_category_modal"><i class="fa-regular fa-pen-to-square"></i></button>
                                 <button class="btn btn-danger"><i class="fa-regular fa-trash-can"></i></button>
                             </td>
                         </tr>
