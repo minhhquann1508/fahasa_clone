@@ -12,5 +12,3 @@
         $controller->index();
     }
 ?>
-
-<!-- duy -->
