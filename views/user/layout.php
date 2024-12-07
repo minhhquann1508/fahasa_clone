@@ -25,7 +25,12 @@
     <main>
         <?php include_once '_header.php' ?>
         <?php include_once $main_view ?>
+        <?php include_once '_footer.php' ?>
     </main>
+    <style>
+        body {
+            background-color: #f0f0f0;
+        }
+    </style>
 </body>
-
 </html>
