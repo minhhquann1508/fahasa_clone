@@ -203,13 +203,18 @@
                     <p class="text-m mt-2">Giao hàng đến <span class="fw-bold">Phường Bến Nghé, Quận 1 ,Hồ Chí Minh</span></p>
                     <p class="text-m fw-bold mt-2" style="color:#2489F4;">Thay đổi</p>
                 </div>
-                <div class="d-flex">
-                    <img src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/ico-delivery-green.png" alt="" width="25px" height="25px">
-                    <div>
+                <div class="d-flex gap-3 mt-2">
+                    <img src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/ico-delivery-green.png" class="mt-2" alt="" width="22px" height="22px">
+                    <div class="">
                         <p class="fw-bold text-l">Giao hàng tiêu chuẩn</p>
-                        <p class="text-m">Dự kiến giao Thứ hai - <span class="fw-bold">09/12</span></p>
+                        <p class="text-m mt-1">Dự kiến giao Thứ hai - <span class="fw-bold">09/12</span></p>
                     </div>
                 </div>
+                <div class="d-flex align-items-center gap-3">
+                    <p class="fw-bold mt-2" style="font-size: 18px;">Ưu đãi liên quan</p>
+                    <a class="text-m fw-bold mt-2" href=""><p  style="color:#2489F4;">Xem thêm <i class="fa-solid fa-angle-right"></i></p></a>
+                </div>
+
             </div>
         </div>
     <?php endforeach; ?>
