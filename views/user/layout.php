@@ -22,6 +22,10 @@
 </head>
 
 <body>
+    <!-- Toast -->
+    <?php showToast();?>
+    <div class="custom-notifications"></div>
+
     <main>
         <?php include_once '_header.php' ?>
         <?php include_once $main_view ?>

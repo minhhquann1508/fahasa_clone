@@ -20,8 +20,11 @@
     </script>
     <title>Trang quản trị</title>
 </head>
-
 <body>
+    <!-- Toast -->
+    <?php showToast();?>
+    <div class="custom-notifications"></div>
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-2 px-0" style="border-right: 1px solid #ccc;">
