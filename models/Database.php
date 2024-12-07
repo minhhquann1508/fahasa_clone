@@ -4,7 +4,7 @@
         public static function get_connection() {
             if (!self::$conn) {
                 $host = 'localhost';
-                $dbname = 'chovybe';
+                $dbname = 'fahasa';
                 $username = 'root';
                 $password = '';
 

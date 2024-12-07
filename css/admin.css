@@ -5,3 +5,7 @@
 .search-box input:focus{
     outline: none;
 }
+
+.side-bar-active {
+    background-color: #eeeeee;
+}
