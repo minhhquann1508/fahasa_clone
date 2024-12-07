@@ -329,7 +329,6 @@ $data['category'] = [
     </div>
 </div>
 
-<div style="height: 400px;"></div>
 
 <!-- subcribe -->
 <div class="container mt-3 p-3 mb-3 rounded-top" style="width: 1230px;background:rgb(159 167 171)">
