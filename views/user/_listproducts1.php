@@ -1,6 +1,6 @@
 <?php
 $data['bestseller'] = [
-    1 => [
+    0 => [
         'title' => 'Xứ Sở Miên Man - Bản Đặc Biệt - Tặng Kèm 1 Bookmark + 2',
         'price' => '238.000đ',
         'thumbnail' => 'https://placehold.co/400',
@@ -8,7 +8,7 @@ $data['bestseller'] = [
         'quantity' => '200',
         'sold' => '10',
     ],
-    2 => [
+    1 => [
         'title' => 'Nexus - A Brief History Of Information Networks From The',
         'price' => '509.000đ',
         'thumbnail' => 'https://placehold.co/400',
@@ -16,15 +16,15 @@ $data['bestseller'] = [
         'quantity' => '200',
         'sold' => '50',
     ],
-    3 => [
+    2 => [
         'title' => 'Máy Tính Casio FX-880BTG - Màu Đen + Bút Frixion Colors và G2 (Bút Giao Ngẫu Nhiên)',
         'price' => '238.000đ',
         'thumbnail' => 'https://placehold.co/400',
-        'discount' => '0',
+        'discount' => '5',
         'quantity' => '200',
         'sold' => '100',
     ],
-    4 => [
+    3 => [
         'title' => 'Electronics',
         'price' => '238.000đ',
         'thumbnail' => 'https://placehold.co/400',
@@ -32,13 +32,21 @@ $data['bestseller'] = [
         'quantity' => '400',
         'sold' => '399',
     ],
-    5 => [
+    4 => [
         'title' => 'Electronics',
         'price' => '238.000đ',
         'thumbnail' => 'https://placehold.co/400',
         'discount' => '0',
         'quantity' => '200',
         'sold' => '200',
+    ],
+    5 => [
+        'title' => 'Electronics',
+        'price' => '238.000đ',
+        'thumbnail' => 'https://placehold.co/400',
+        'discount' => '10',
+        'quantity' => '200',
+        'sold' => '120',
     ],
     6 => [
         'title' => 'Electronics',
@@ -52,54 +60,46 @@ $data['bestseller'] = [
         'title' => 'Electronics',
         'price' => '238.000đ',
         'thumbnail' => 'https://placehold.co/400',
-        'discount' => '0',
+        'discount' => '30',
         'quantity' => '200',
-        'sold' => '120',
+        'sold' => '200',
     ],
     8 => [
-        'title' => 'Electronics',
+        'title' => 'Electronic',
         'price' => '238.000đ',
         'thumbnail' => 'https://placehold.co/400',
         'discount' => '0',
         'quantity' => '200',
-        'sold' => '200',
+        'sold' => '22',
     ],
     9 => [
         'title' => 'Electronics',
         'price' => '238.000đ',
         'thumbnail' => 'https://placehold.co/400',
-        'discount' => '0',
+        'discount' => '10',
         'quantity' => '200',
-        'sold' => '2',
+        'sold' => '109',
     ],
-    10 => [
-        'title' => 'Electronics',
-        'price' => '238.000đ',
-        'thumbnail' => 'https://placehold.co/400',
-        'discount' => '0',
-        'quantity' => '200',
-        'sold' => '199',
-    ],
-
-    
 ];
-foreach ($data['bestseller'] as $key => &$value) {
+
+foreach ($data['bestseller'] as $key => $value) {
     if ($value['discount'] != '0') {
         $originalPrice = intval(str_replace('.', '', explode('đ', $value['price'])[0]));
         $discount = intval($value['discount']);
-        $value['final_price'] = number_format($originalPrice - ($originalPrice * $discount / 100), 0, '.', '.') . 'đ';
+        $data['bestseller'][$key]['final_price'] = number_format($originalPrice - ($originalPrice * $discount / 100), 0, '.', '.') . 'đ';
     } else {
-        $value['final_price'] = $value['price'];
+        $data['bestseller'][$key]['final_price'] = $value['price'];
     }
 }
-
 ?>
 
 <div class="grid-container pb-4 mt-2 ">
     <?php foreach ($data['bestseller'] as $key => $value) : ?>
         <a href="">
             <div class="card-model p-2" style="height: 380px;">
-                <img src="<?php echo $value['thumbnail']; ?>" alt="<?php echo $value['title']; ?>" class="product-image">
+                <div class="px-2">
+                    <img src="<?php echo $value['thumbnail']; ?>" alt="<?php echo $value['title']; ?>" class="product-image">
+                </div>
                 <div  style="height: 110px;">
                     <p title="<?php echo $value['title'];?>" class="product-title mt-2 text-m" style="height: 40px;overflow:hidden;"><?php echo $value['title']; ?></p>
                     <div class="d-flex gap-3 align-items-center">
@@ -170,6 +170,11 @@ foreach ($data['bestseller'] as $key => &$value) {
         border: 2px solid #C92127;
         font-size: 14px;
         font-weight: 700;
+    }
+    .custom-btn:hover {
+        background-color: #fff;
+        color: #C92127;
+        border: 2px solid #C92127;
     }
     .grid-container {
         display: grid;
