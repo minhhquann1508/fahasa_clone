@@ -41,6 +41,9 @@ a {
 .text-l {
     font-size: 16px;
 }
+.text-xl {
+    font-size: 18px;
+}
 
 .pagination-active {
     background-color: var(--primary) !important;
