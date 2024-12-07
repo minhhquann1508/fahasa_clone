@@ -219,52 +219,158 @@ $data['category'] = [
 
 <!-- list products -->
 <div class="container px-0 mt-4 rounded" style="width: 1230px;background-color:white">
-<div class="">
-    <div class="px-3">
-        <div class="card-header border-bottom">
-            <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
-                <li class="nav-item">
-                    <button class="nav-link active py-2" id="login-tab" data-bs-toggle="tab" data-bs-target="#calendar"
-                        type="button" role="tab" aria-selected="true">Lịch Bàn 2025</button>
-                </li>
-            </ul>
+    <div class="">
+        <div class="px-3">
+            <div class="card-header border-bottom">
+                <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <button class="nav-link active py-2" id="login-tab" data-bs-toggle="tab" data-bs-target="#calendar"
+                            type="button" role="tab" aria-selected="true">Lịch Bàn 2025</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body ">
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="calendar" role="tabpanel" aria-labelledby="login-tab">
+                        <?php include '_listproducts2.php'?>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="card-body ">
-            <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="calendar" role="tabpanel" aria-labelledby="login-tab">
-                    <?php include '_listproducts2.php'?>
+    </div>
+</div>
+
+<!-- hot list products -->
+<?php include '_hotlist.php'?>
+
+<!-- banner & bestproducts -->
+<div class="container mt-3 p-0" style="width: 1230px;">
+    <div class="d-flex justify-content-between gap-2">
+        <div class="rounded py-2 px-3" style="background:white;">
+            <div class="d-flex justify-content-between align-items-center">
+                <p class="fw-bold" style="font-size: 18px;">Thiếu nhi</p>
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+            <div class="mt-3">
+                <img src="https://placehold.co/800x400/png" class="rounded-top" width="100%" height="165px">
+            </div>
+            <div class="d-flex justify-content-between gap-2 mt-2 mb-2">
+                <div class="">
+                    <img src="https://placehold.co/400" alt="" width="100%">
+                </div>
+                <div class="">
+                    <img src="https://placehold.co/400" alt="" width="100%">
+                </div>
+                <div class="">
+                    <img src="https://placehold.co/400" alt="" width="100%">
+                </div>
+            </div>
+        </div>
+        <div class="rounded py-2 px-3" style="background:white;">
+            <div class="d-flex justify-content-between align-items-center">
+                <p class="fw-bold" style="font-size: 18px;">Thiếu nhi</p>
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+            <div class="mt-3">
+                <img src="https://placehold.co/800x400/png" class="rounded-top" width="100%" height="165px">
+            </div>
+            <div class="d-flex justify-content-between gap-2 mt-2 mb-2">
+                <div class="">
+                    <img src="https://placehold.co/400" alt="" width="100%">
+                </div>
+                <div class="">
+                    <img src="https://placehold.co/400" alt="" width="100%">
+                </div>
+                <div class="">
+                    <img src="https://placehold.co/400" alt="" width="100%">
+                </div>
+            </div>
+        </div>
+        <div class="rounded py-2 px-3" style="background:white;">
+            <div class="d-flex justify-content-between align-items-center">
+                <p class="fw-bold" style="font-size: 18px;">Thiếu nhi</p>
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+            <div class="mt-3">
+                <img src="https://placehold.co/800x400/png" class="rounded-top" width="100%" height="165px">
+            </div>
+            <div class="d-flex justify-content-between gap-2 mt-2 mb-2">
+                <div class="">
+                    <img src="https://placehold.co/400" alt="" width="100%">
+                </div>
+                <div class="">
+                    <img src="https://placehold.co/400" alt="" width="100%">
+                </div>
+                <div class="">
+                    <img src="https://placehold.co/400" alt="" width="100%">
+                </div>
+            </div>
+        </div>
+        <div class="rounded py-2 px-3" style="background:white;">
+            <div class="d-flex justify-content-between align-items-center">
+                <p class="fw-bold" style="font-size: 18px;">Thiếu nhi</p>
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+            <div class="mt-3">
+                <img src="https://placehold.co/800x400/png" class="rounded-top" width="100%" height="165px">
+            </div>
+            <div class="d-flex justify-content-between gap-2 mt-2 mb-2">
+                <div class="">
+                    <img src="https://placehold.co/400" alt="" width="100%">
+                </div>
+                <div class="">
+                    <img src="https://placehold.co/400" alt="" width="100%">
+                </div>
+                <div class="">
+                    <img src="https://placehold.co/400" alt="" width="100%">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="height: 400px;"></div>
+
+<!-- subcribe -->
+<div class="container mt-3 p-3 mb-3 rounded-top" style="width: 1230px;background:rgb(159 167 171)">
+    <div class="d-flex justify-content-center">
+    <div class="d-flex" style="width:950px">
+        <div class="d-flex align-items-center gap-2">
+            <i class="fa-regular fa-envelope"></i>
+            <p>ĐĂNG KÝ NHẬN BẢN TIN</p>
+        </div>
+        <div class="input-group d-flex align-items-center">
+            <div class="input-group" style="width: 500px;height:40px">
+                <input type="text" class="form-control rounded" placeholder="Tìm kiếm sản phẩm..." >
+                <div class="input-group-append position-relative">
+                    <button class="btn btn-outline-secondary position-absolute d-flex justify-content-center rounded" type="button" style="width:72px;height:30px;background:var(--primary);color:white;right:2px;top:5px">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
                 </div>
             </div>
         </div>
     </div>
 </div>
 </div>
-
-<!-- hot list products -->
-<?php include '_hotlist.php'?>
-
-
-<div style="height: 400px;"></div>
-
 <style>
     p {
         padding: 0;
         margin: 0;
     }
-    .nav-tabs .nav-link {
-    border: none;
-    font-size: 14px;
-    color: #666;
-}
-.nav-tabs .nav-link.active {
-    color: #d90429;
-    border-bottom: 2px solid #d90429;
-    font-weight: bold;
-}
-.flash-grid-container {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); 
-    gap: 10px; 
-}
+        .nav-tabs .nav-link {
+        border: none;
+        font-size: 14px;
+        color: #666;
+    }
+    .nav-tabs .nav-link.active {
+        color: #d90429;
+        border-bottom: 2px solid #d90429;
+        font-weight: bold;
+    }
+    .flash-grid-container {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr); 
+        gap: 10px; 
+    }
 
 </style>

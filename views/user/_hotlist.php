@@ -60,10 +60,10 @@
     <div class="list_product-scroll-container scroll-container px-2">
         <div class="row flex-nowrap gap-2 px-2">
             <?php foreach ($data['books'] as $key => $value) : ?>
-                <div class="px-3 product-card" style="width:150px;pointer-events: none;user-select: none;">
+                <div class="px-3 product-card" style="width:147px;pointer-events: none;user-select: none;">
                     <a href="">
                         <div class="d-flex flex-column">
-                            <img src="<?php echo $value['thumbnail']; ?>" width="120px">
+                            <img src="<?php echo $value['thumbnail']; ?>" width="115px">
                             <p class="text-center" style="font-size: 14px;"><?php echo $value['title']; ?></p>
                         </div>
                     </a>

@@ -1,6 +1,6 @@
 <footer>
-<div class="container rounded p-3" style="background:var(--white);">
-    <div class="row">
+<div class="container rounded p-3" style="width: 1230px;background:var(--white);">
+    <div class="row" style="border-right:1px solid #ccc">
         <div class="col-4 text-s mt-2">
             <img src="./img/logo.webp" style="width:300px; vertical-align: middle;">
             <p>Lầu 5, 387-389 Hai Bà Trưng Quận 3 TP HCM</p>
