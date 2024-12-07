@@ -21,7 +21,7 @@
         }
 
         public function category() {
-            $main_view = './views/admin/category.php';
+            $main_view = './views/admin/category/category.php';
             include_once './views/admin/layout.php';
         }
 

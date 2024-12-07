@@ -11,7 +11,6 @@
                 try {
                     self::$conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
                     self::$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                    echo 'Kết nối thành công<br>';
                 } catch (PDOException $e) {
                     die('Kết nối thất bại: ' . $e->getMessage());
                 }
