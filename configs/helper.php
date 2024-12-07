@@ -4,12 +4,28 @@
     } 
 
     function slugify($str) {
-        $str = trim($str);
-        $str = mb_strtolower($str);
+        $str = trim($str); // Loại bỏ khoảng trắng đầu/cuối
+        $str = mb_strtolower($str); // Chuyển sang chữ thường
+    
+        // Loại bỏ dấu tiếng Việt
+        $str = preg_replace(
+            [
+                '/[áàảãạăắằẳẵặâấầẩẫậ]/u', 
+                '/[éèẻẽẹêếềểễệ]/u', 
+                '/[íìỉĩị]/u', 
+                '/[óòỏõọôốồổỗộơớờởỡợ]/u', 
+                '/[úùủũụưứừửữự]/u', 
+                '/[ýỳỷỹỵ]/u', 
+                '/[đ]/u'
+            ],
+            ['a', 'e', 'i', 'o', 'u', 'y', 'd'], 
+            $str
+        );
         $str = preg_replace('/[^a-z0-9-]+/', '-', $str);
-        return $str;
+        $str = preg_replace('/-+/', '-', $str);
+        return trim($str, '-');
     }
-
+    
     function return_data($status, $data, $message) {
         return [
             'status' => $status,

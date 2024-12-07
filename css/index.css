@@ -42,3 +42,7 @@ a {
     font-size: 16px;
 }
 
+.pagination-active {
+    background-color: var(--primary) !important;
+}
+
