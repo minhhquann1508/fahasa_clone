@@ -7,11 +7,13 @@
         $name = $_POST['name'];
         $thumbnail = $_FILES['thumbnail'] && $_FILES['thumbnail']['error'] === UPLOAD_ERR_OK ? upload_file($_FILES['thumbnail']['tmp_name']) : '';
         $slug = slugify($name);
-        
+        $is_show = isset($_POST['is_show']) ? 1 : 0;
+
         $category = [
             'name' => $name,
             'thumbnail' => $thumbnail,
             'slug' => $slug,
+            'is_show' => $is_show
         ];
 
         $is_add_success = Category::add_new_category($category);
@@ -40,6 +42,11 @@
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Hình ảnh</label>
                     <input type="file" name="thumbnail" class="form-control">
+                </div>
+                <div class="form-check form-switch mb-3">
+                    <input class="form-check-input" name="is_show" type="checkbox" role="switch"
+                        id="flexSwitchCheckDefault">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Ẩn hiện danh mục</label>
                 </div>
             </div>
             <div class="modal-footer">
