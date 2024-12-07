@@ -1,3 +1,4 @@
+<?php include_once './utils/libs.php'?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,6 +23,10 @@
 </head>
 
 <body>
+    <!-- Toast -->
+    <?php showToast();?>
+    <div class="custom-notifications"></div>
+
     <main>
         <?php include_once '_header.php' ?>
         <?php include_once $main_view ?>
