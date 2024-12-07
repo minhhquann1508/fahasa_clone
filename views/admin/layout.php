@@ -1,3 +1,5 @@
+<?php include_once './utils/libs.php'?>
+
 <!DOCTYPE html>
 <html lang="en">
 
