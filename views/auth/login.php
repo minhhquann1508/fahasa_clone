@@ -1,86 +1,139 @@
+<style>
+/* LOGIN */
+.card {
+    width: 400px;
+    margin: 50px auto;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    padding: 0;
+    border-bottom: none;
+}
+
+.nav-tabs {
+    display: flex;
+    justify-content: center;
+    border-bottom: none;
+}
+
+.nav-tabs .nav-link {
+    border: none;
+    font-size: 18px;
+    color: #666;
+}
+
+.nav-tabs .nav-link.active {
+    color: #d90429;
+    border-bottom: 2px solid #d90429;
+}
+
+.form-label {
+    font-size: 14px;
+    color: #555;
+}
+
+.form-control {
+    height: 50px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.btn {
+    background-color: #d90429;
+    border: none;
+    height: 45px;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+.btn:disabled {
+    background-color: #dcdcdc;
+    cursor: not-allowed;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border: none;
+    height: 45px;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+.card-body {
+    padding: 30px;
+}
+
+.form-text {
+    font-size: 12px;
+    color: #999;
+    text-align: right;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+</style>
 <div class="container">
-    <div class="login-register">
-        <input type="radio" id="login" name="tab" checked>
-        <input type="radio" id="register" name="tab">
-
-        <div class="tabs">
-            <label class="tab active" for="login">Đăng nhập</label>
-            <label class="tab" for="register">Đăng ký</label>
+    <div class="card">
+        <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login"
+                        type="button" role="tab" aria-controls="login" aria-selected="true">Đăng nhập</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="register-tab" data-bs-toggle="tab" data-bs-target="#register"
+                        type="button" role="tab" aria-controls="register" aria-selected="false">Đăng ký</button>
+                </li>
+            </ul>
         </div>
-
-        <div class="tab-content login-content active">
-            <form id="login-form" method="POST">
-                <div class="input-group">
-                    <label for="login-email">Email:</label>
-                    <input type="text" name="email" id="login-email" placeholder="Nhập số điện thoại hoặc email">
+        <div class="card-body">
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                    <form id="login-form">
+                        <div class="mb-3">
+                            <label for="login-email" class="form-label">Email hoặc số điện thoại:</label>
+                            <input type="text" class="form-control" id="login-email"
+                                placeholder="Nhập email hoặc số điện thoại">
+                        </div>
+                        <div class="mb-3">
+                            <label for="login-password" class="form-label">Mật khẩu:</label>
+                            <input type="password" class="form-control" id="login-password" placeholder="Nhập mật khẩu">
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Đăng nhập</button>
+                    </form>
                 </div>
-                <div class="input-group">
-                    <label for="login-password">Mật khẩu:</label>
-                    <div class="input-wrapper">
-                        <input type="password" id="password" placeholder="Nhập mật khẩu">
-                        <span id="togglePassword" class="toggle-password">Hiện</span>
-                    </div>
-                    <a href="#" class="forgot-password">Quên mật khẩu?</a>
+                <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+                    <form id="register-form">
+                        <div class="mb-3">
+                            <label for="register-name" class="form-label">Họ và tên:</label>
+                            <input type="text" class="form-control" id="register-name" placeholder="Nhập họ và tên">
+                        </div>
+                        <div class="mb-3">
+                            <label for="register-email" class="form-label">Email:</label>
+                            <input type="email" class="form-control" id="register-email" placeholder="Nhập email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="register-password" class="form-label">Mật khẩu:</label>
+                            <input type="password" class="form-control" id="register-password"
+                                placeholder="Nhập mật khẩu">
+                        </div>
+                        <div class="mb-3">
+                            <label for="register-confirm-password" class="form-label">Xác nhận mật khẩu:</label>
+                            <input type="password" class="form-control" id="register-confirm-password"
+                                placeholder="Xác nhận mật khẩu">
+                        </div>
+                        <button type="submit" class="btn w-100">Đăng ký</button>
+                    </form>
                 </div>
-                <div class="button-group">
-                    <button type="submit" name="submit">Đăng nhập</button>
-                </div>
-            </form>
-        </div>
-        <div class="tab-content register-content">
-            <form id="register-form" method="POST">
-                <div class="input-group">
-                    <label for="register-name">Họ và tên:</label>
-                    <input type="text" name="name" id="register-name" placeholder="Nhập họ và tên">
-                </div>
-                <div class="input-group">
-                    <label for="register-email">Email:</label>
-                    <input type="email" name="email" id="register-email" placeholder="Nhập email">
-                </div>
-                <div class="input-group">
-                    <label for="register-password">Mật khẩu:</label>
-                    <div class="input-wrapper">
-                        <input type="password" id="register-password" placeholder="Nhập mật khẩu">
-                        <span id="togglePasswordRegister" class="toggle-password">Hiện</span>
-                    </div>
-                </div>
-                <div class="input-group">
-                    <label for="register-confirm-password">Xác nhận mật khẩu:</label>
-                    <div class="input-wrapper">
-                        <input type="password" id="register-confirm-password" placeholder="Xác nhận mật khẩu">
-                        <span id="togglePasswordConfirm" class="toggle-password">Hiện</span>
-                    </div>
-                </div>
-                <div class="button-group">
-                    <button type="submit" name="register_submit">Đăng ký</button>
-                </div>
-            </form>
+            </div>
         </div>
     </div>
 </div>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const tabDangNhap = document.querySelector('label[for="login"]');
-    const tabDangKy = document.querySelector('label[for="register"]');
-    const noiDungDangNhap = document.querySelector('.login-content');
-    const noiDungDangKy = document.querySelector('.register-content');
-
-    tabDangNhap.addEventListener('click', function() {
-        if (!tabDangNhap.classList.contains('active')) {
-            tabDangNhap.classList.add('active');
-            tabDangKy.classList.remove('active');
-            noiDungDangNhap.classList.add('active');
-            noiDungDangKy.classList.remove('active');
-        }
-    });
-
-    tabDangKy.addEventListener('click', function() {
-        if (!tabDangKy.classList.contains('active')) {
-            tabDangKy.classList.add('active');
-            tabDangNhap.classList.remove('active');
-            noiDungDangKy.classList.add('active');
-            noiDungDangNhap.classList.remove('active');
-        }
-    });
-});
-</script>
