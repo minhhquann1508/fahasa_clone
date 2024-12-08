@@ -1,0 +1,15 @@
+.btn-primary {
+    background-color: var(--primary) ;
+    color: var(--white) ;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 30%;
+    margin-left: 250px;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary) ;
+    color: var(--white) ;
+}
