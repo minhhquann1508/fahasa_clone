@@ -356,16 +356,6 @@ $data['category'] = [
         padding: 0;
         margin: 0;
     }
-        .nav-tabs .nav-link {
-        border: none;
-        font-size: 14px;
-        color: #666;
-    }
-    .nav-tabs .nav-link.active {
-        color: #d90429;
-        border-bottom: 2px solid #d90429;
-        font-weight: bold;
-    }
     .flash-grid-container {
         display: grid;
         grid-template-columns: repeat(5, 1fr); 

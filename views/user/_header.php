@@ -30,7 +30,7 @@ $data['category'] = [
 ?>
 
 
-<div>
+<div style="">
     <div style="background-color:var(--secondary)" class="d-flex justify-content-center">
         <div class="container">
             <img src="./img/top_banner.webp" height="auto" width="100%">
@@ -38,7 +38,7 @@ $data['category'] = [
     </div>
     <div class="mx-auto" style="background-color: white">
         <div class="container p-0" style="width:1230px">
-            <div class="d-flex align-items-center justify-content-between" style="height: 68px;">
+            <div class="d-flex align-items-center justify-content-between" style="height: 68px">
                 <div>
                     <img src="./img/logo.webp" style="width:220px; vertical-align: middle;">
                 </div>
@@ -47,7 +47,7 @@ $data['category'] = [
                         <div class="dropdown d-flex align-items-center gap-2"  style="height:100%">
                             <img src="./img/menu_red.svg" style="color: var(--greyD);">
                             <span><i class="fa-solid fa-angle-down"></i></span>
-                        <ul class="dropdown-menu container pt-4 px-3 pb-3" aria-labelledby="dropdownMenuButton"  style="width:1230px">
+                        <ul class="dropdown-menu container pt-4 px-3 pb-3" aria-labelledby="dropdownMenuButton" style="width:1230px;z-index:10000">
                             <div class="row">
                                 <div class="col-3 " style="border-right:1px solid #ccc">
                                     <p class="fs-4">Danh mục sản phẩm</p>
@@ -63,7 +63,6 @@ $data['category'] = [
 
                                 </div>
                             </div>
-
                         </ul>
                         </div>
                     </div>
@@ -109,11 +108,11 @@ $data['category'] = [
 
 <style>
 .dropdown:hover>.dropdown-menu {
-  display: block;
+    display: block;
+    z-index: 1000;
 }
 
 .dropdown>.dropdown-toggle:active {
-  /*Without this, clicking will make it sticky*/
     pointer-events: none;
 }
 .dropdown-menu {
