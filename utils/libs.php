@@ -1,5 +1,4 @@
 <?php
-
 function redirect($link, $message = null, $type = "success") {
     if ($message != null) {
         setToast($message, $type); // Set cookies for message and type

@@ -26,7 +26,6 @@ $data['category'] = [
         'slug' => 'toys',
     ],
 ];
-
 ?>
 
 
@@ -38,7 +37,7 @@ $data['category'] = [
     </div>
     <div class="mx-auto" style="background-color: white">
         <div class="container p-0" style="width:1230px">
-            <div class="d-flex align-items-center justify-content-between" style="height: 68px;">
+            <div class="d-flex align-items-center justify-content-between" style="height: 68px">
                 <div>
                     <img src="./img/logo.webp" style="width:220px; vertical-align: middle;">
                 </div>
@@ -53,19 +52,30 @@ $data['category'] = [
                                     <div class="col-3 " style="border-right:1px solid #ccc">
                                         <p class="fs-4">Danh mục sản phẩm</p>
                                         <?php foreach ($data['category'] as $keys => $values) : ?>
-                                        <li>
-                                            <a class="dropdown-item" href="#">
-                                                <?php echo $values['name']; ?>
-                                            </a>
-                                        </li>
-                                        <?php endforeach; ?>
-                                    </div>
-                                    <div class="col-9">
+
+                                        <ul class="dropdown-menu container pt-4 px-3 pb-3"
+                                            aria-labelledby="dropdownMenuButton" style="width:1230px;z-index:10000">
+                                            <div class="row">
+                                                <div class="col-3 " style="border-right:1px solid #ccc">
+                                                    <p class="fs-4">Danh mục sản phẩm</p>
+                                                    <?php foreach ($data['category'] as $keys => $values) : ?>
+
+                                                    <li>
+                                                        <a class="dropdown-item" href="#">
+                                                            <?php echo $values['name']; ?>
+                                                        </a>
+                                                    </li>
+                                                    <?php endforeach; ?>
+                                                </div>
+                                                <div class="col-9">
+
+                                                </div>
+                                            </div>
+                                        </ul>
 
                                     </div>
-                                </div>
-
                             </ul>
+
                         </div>
                     </div>
                     <div class="input-group d-flex align-items-center">
@@ -122,67 +132,3 @@ $data['category'] = [
         </div>
     </div>
 </div>
-
-<style>
-.dropdown:hover>.dropdown-menu {
-    display: block;
-}
-
-.dropdown>.dropdown-toggle:active {
-    /*Without this, clicking will make it sticky*/
-    pointer-events: none;
-}
-
-.dropdown-menu {
-    left: -255px;
-    top: 65px;
-}
-
-.accout {
-    position: relative;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.accept {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    list-style: none;
-    padding: 0;
-    margin: 10px 0 0;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 10;
-    display: none;
-}
-
-.accout:hover .accept {
-    display: block;
-}
-
-.accept li {
-    margin: 0;
-    padding: 0;
-}
-
-.accept a {
-    display: block;
-    padding: 10px 20px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
-
-.accept a:hover {
-    background-color: #d90429;
-    color: #fff;
-}
-
-.accept li:not(:last-child) a {
-    border-bottom: 1px solid #ddd;
-}
-</style>

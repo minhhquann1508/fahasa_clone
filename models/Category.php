@@ -53,5 +53,43 @@
                 return return_data(false, [], $e->getMessage());
             }
         }
+
+        public static function delete_category($id) {
+            try {
+                $conn = Database::get_connection();
+                $sql = "DELETE FROM category WHERE id = :id";
+                $stmt = $conn->prepare($sql);
+                $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+                
+                if($stmt->execute()) {
+                    return return_data(true, [], 'Xóa thành công');
+                } else {
+                    return return_data(false, [], 'Xóa thất bại');
+                }
+            } catch (PDOException $e) {
+                return return_data(false, [], $e->getMessage());
+            }
+        }
+
+        public static function update_category($category) {
+            try {
+                $conn = Database::get_connection();
+                $sql = "UPDATE category SET name = :name, slug = :slug, thumbnail = :thumbnail, is_show = :is_show WHERE id = :id";
+                $stmt = $conn->prepare($sql);
+                $stmt->bindValue(':name', $category['name']);
+                $stmt->bindValue(':slug', $category['slug']);
+                $stmt->bindValue(':thumbnail', $category['thumbnail']);
+                $stmt->bindValue(':is_show', $category['is_show']);
+                $stmt->bindValue(':id', $category['id'], PDO::PARAM_INT);
+
+                if($stmt->execute()) {
+                    return return_data(true, [], 'Sửa thành công');
+                } else {
+                    return return_data(false, [], 'Sửa thất bại');
+                }
+            } catch (PDOException $e) {
+                return return_data(false, [], $e->getMessage());
+            }
+        }
     }
 ?>
