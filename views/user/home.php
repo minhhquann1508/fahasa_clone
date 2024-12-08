@@ -238,6 +238,54 @@ $data['category'] = [
     </div>
 </div>
 
+<!-- Merry Chrismas -->
+<div class="container pb-4 px-2 mt-3 rounded" style="width: 1230px;background-color:white">
+    <div class="d-flex align-items-center pt-3 py-3 gap-2 border-bottom">
+        <img src="https://cdn0.fahasa.com/media/fahasa_web_image/noel_event_image/satan_noel.svg" alt="" width="24px">
+        <p class="fw-bold" style="font-size: 17px;text-transform: uppercase;">merry christmas</p>
+    </div>
+    <div class="d-flex justify-content-between gap-3">
+        <div class="p-2">
+            <img  src="https://placehold.co/600x400" width="750px">
+        </div>
+        <div class="w-100">
+            <p class="mt-2 fw-bold" style="font-size: 14px;">Trang trí Giáng Sinh</p>
+            <div class="d-flex justify-content-between mt-2">
+                <div class="px-2" style="background: #f2f4f5;">
+                    <img class="rounded mt-2" src="https://placehold.co/400" alt="" width="80px">
+                    <p class="mt-2 mb-4 text-center" style="font-size: 12px">Cây thông</p>
+                </div>
+                <div class="px-2" style="background: #f2f4f5;">
+                    <img class="rounded mt-2" src="https://placehold.co/400" alt="" width="80px">
+                    <p class="mt-2 mb-4 text-center" style="font-size: 12px">Cây thông</p>
+                </div>
+                <div class="px-2" style="background: #f2f4f5;">
+                    <img class="rounded mt-2" src="https://placehold.co/400" alt="" width="80px">
+                    <p class="mt-2 mb-4 text-center" style="font-size: 12px">Cây thông</p>
+                </div>
+                <div class="px-2" style="background: #f2f4f5;">
+                    <img class="rounded mt-2" src="https://placehold.co/400" alt="" width="80px">
+                    <p class="mt-2 mb-4 text-center" style="font-size: 12px">Cây thông</p>
+                </div>
+            </div>
+            <div class="mt-3" style="overflow: auto; height:310px">
+                <div class="">
+                    <img class="w-100" src="https://placehold.co/400x100" alt="" height="100px">
+                </div>
+                <div class="mt-2">
+                    <img class="w-100" src="https://placehold.co/400x100" alt="" height="100px">
+                </div>
+                <div class="mt-2">
+                    <img class="w-100" src="https://placehold.co/400x100" alt="" height="100px">
+                </div>
+                <div class="mt-2">
+                    <img class="w-100" src="https://placehold.co/400x100" alt="" height="100px">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- hot list products 1-->
 <div class="container px-0 pb-3 mt-4 rounded position-relative" style="width: 1230px; background-color:white;">
     <div class="d-flex align-items-center py-3 px-3 gap-2 rounded-top" style="background-color: var(--fourth);">
@@ -866,7 +914,6 @@ $data['category'] = [
         </div>
     </div>
 </div>
-
 
 </div>
 <style>
