@@ -22,7 +22,7 @@
     </script>
 
     <!-- ProductListsLogic -->
-     <script src="./js/product_list.js"></script>
+    <script src="./js/product_list.js"></script>
     <title>Trang chủ</title>
 </head>
 
@@ -37,9 +37,10 @@
         <?php include_once '_footer.php' ?>
     </main>
     <style>
-        body {
-            background-color: #f0f0f0;
-        }
+    body {
+        background-color: #f0f0f0;
+    }
     </style>
 </body>
+
 </html>
