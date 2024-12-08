@@ -47,7 +47,7 @@
             <?php 
                 foreach ($category_data['data']['categories'] as $index => $category) {
                     $is_show = $category['is_show'] == 1 ? 'Hiện' : 'Ẩn';
-                    $category_json = htmlspecialchars(json_encode($category), ENT_QUOTES, 'UTF-8'); // JSON an toàn
+                    $category_json = format_data_json($category); // JSON an toàn
                     echo '
                         <tr>
                             <td>'.($index + 1).'</td>

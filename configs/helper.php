@@ -33,4 +33,8 @@
             'message' => $message
         ];
     }
+
+    function format_data_json($data) {
+        return htmlspecialchars(json_encode($data), ENT_QUOTES, 'UTF-8');
+    }
 ?>
