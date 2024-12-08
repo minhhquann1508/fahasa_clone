@@ -143,15 +143,12 @@ foreach ($data['bestseller'] as $key => $value) {
         </a>
     <?php endforeach; ?>
 </div>
-<div class="d-flex justify-content-center pb-3">
-        <button class="custom-btn btn py-2">
-            Xem thêm
-        </button>
-</div>
+<?php include '_button_showmore.php'?>
 
 <script>
-    const cardModels = document.querySelectorAll('.card-model');
-    cardModels.forEach(card => {
+function applyCardHoverEffect(selector) {
+    const cards = document.querySelectorAll(selector);
+    cards.forEach(card => {
         card.addEventListener('mouseenter', () => {
             card.style.boxShadow = 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px'; 
         });
@@ -160,22 +157,13 @@ foreach ($data['bestseller'] as $key => $value) {
             card.style.boxShadow = 'none'; 
         });
     });
+}
+applyCardHoverEffect('.card-model');
+
 </script>
 
 <style>
-    .custom-btn {
-        width: 210px;
-        color: #C92127;
-        background-color: #fff;
-        border: 2px solid #C92127;
-        font-size: 14px;
-        font-weight: 700;
-    }
-    .custom-btn:hover {
-        background-color: #fff;
-        color: #C92127;
-        border: 2px solid #C92127;
-    }
+
     .grid-container {
         display: grid;
         grid-template-columns: repeat(5, 1fr); 
@@ -196,30 +184,6 @@ foreach ($data['bestseller'] as $key => $value) {
         color: #ff5722;
     }
 
-    .sold-progress {
-        position: relative;
-        background-color: #f2c7c7;
-        border-radius: 12px;
-        height: 17px;
-        width: 90%;
-        overflow: hidden;
-        }
-
-    .progress-bar {
-        height: 100%;
-        background-color: var(--primary);
-        border-radius: 12px 0 0 12px;
-        transition: width 0.3s ease;
-    }
-
-    .sold-progress span {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: white;
-        font-size: 12px;
-    }
 </style>
 
 

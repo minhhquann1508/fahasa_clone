@@ -1,3 +1,5 @@
+// js này để dragable tất cả container có class = containerSelector
+
 document.addEventListener('DOMContentLoaded', () => {
     const initScroll = (containerSelector) => {
         const scrollContainers = document.querySelectorAll(containerSelector);
