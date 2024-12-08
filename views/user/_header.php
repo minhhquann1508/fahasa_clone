@@ -72,7 +72,7 @@ $data['category'] = [
                             <button
                                 class="btn btn-outline-secondary position-absolute d-flex justify-content-center rounded"
                                 type="button"
-                                style="width: 72px;height: 30px;background: var(--primary);color: white;right: 2px;top: 5px;">
+                                style="width: 72px;height: 30px;background: var(--primary);color: white;right: 2px;top: -15px;">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                             </button>
                         </div>

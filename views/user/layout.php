@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="./css/user.css">
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/product_list.css">
+    <link rel="stylesheet" href="./css/_button_showmore.css">
+    <link rel="stylesheet" href="./css/_sold_progress.css">
 
     <!-- Fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
@@ -40,7 +42,44 @@
     body {
         background-color: #f0f0f0;
     }
-    </style>
+    .sold-progress {
+        position: relative;
+        background-color: #f2c7c7;
+        border-radius: 12px;
+        height: 17px;
+        width: 90%;
+        overflow: hidden;
+    }
+
+    .progress-bar {
+        height: 100%;
+        background-color: var(--primary);
+        border-radius: 12px 0 0 12px;
+        transition: width 0.3s ease;
+    }
+
+    .sold-progress span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 12px;
+    }
+    .custom-btn {
+        width: 210px;
+        color: #C92127;
+        background-color: #fff;
+        border: 2px solid #C92127;
+        font-size: 14px;
+        font-weight: 700;
+    }
+    .custom-btn:hover {
+        background-color: #fff;
+        color: #C92127;
+        border: 2px solid #C92127;
+    }
+</style>
 </body>
 
 </html>

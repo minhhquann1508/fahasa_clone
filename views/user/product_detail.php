@@ -51,13 +51,24 @@
     // Tính trung bình rating
     $total_rating = 0;
     $total_comments = count($data['comment']);
-    foreach ($data['comment'] as $comment) {
-        $total_rating += $comment['rating'];
-    }
-    $average_rating = $total_rating / $total_comments;
+    $rating_count = array_fill(1, 5, 0); // Mảng đếm số lượng mỗi sao (từ 1 sao đến 5 sao)
 
+    foreach ($data['comment'] as $comment) {
+        $rating = intval($comment['rating']);
+        $total_rating += $comment['rating'];
+        $rating_count[$rating]++;
+    }
+    $average_rating = $total_comments > 0 ? $total_rating / $total_comments : 0;
+    $average_rating_rounded = round($average_rating, 1);
+    // Tính tỷ lệ %
+    $percentages = [];
+    for ($i = 5; $i >= 1; $i--) {
+        $percentages[$i] = isset($ratingCount[$i]) ? ($ratingCount[$i] / $totalRatings) * 100 : 0;
+    }
+    
     $max_thumbnail_img = 4;
     $total_img = count($data['image']);
+
 
     foreach ($data['product_detail'] as $key => $value) {
         if ($value['discount'] != '0') {
@@ -316,8 +327,37 @@
             </div>
         </div>
     <?php endforeach; ?>
-
 </div>
+
+<!-- reviews && comments -->
+<div class="container px-3 pt-2 mt-3 rounded" style="width: 1230px;background-color:white">
+    <p class="fw-bold" style="font-size: 18px;">Đánh giá sản phẩm</p>
+    <div class="rating-container">
+        <div class="rating-average">
+            <h1><?php echo $average_rating_rounded; ?>/5</h1>
+            <div class="stars">
+                <?php for ($i = 1; $i <= 5; $i++): ?>
+                    <?php echo $i <= floor($average_rating) ? '★' : '☆'; ?>
+                <?php endfor; ?>
+            </div>
+            <p>(<?php echo $total_comments; ?> đánh giá)</p>
+        </div>
+        <div class="rating-breakdown">
+            <?php for ($i = 5; $i >= 1; $i--): ?>
+                <div class="rating-bar">
+                    <span><?php echo $i; ?> sao</span>
+                    <div class="bar">
+                        <div class="fill" style="width: <?php echo ($total_comments > 0) ? ($rating_count[$i] / $total_comments) * 100 : 0; ?>%;"></div>
+                    </div>
+                    <span><?php echo ($rating_count[$i] > 0) ? $rating_count[$i] : 0; ?> lượt</span>
+                </div>
+            <?php endfor; ?>
+        </div>
+    </div>
+</div>
+
+
+
 <!-- list products -->
 <div class="container px-0 mt-4 rounded" style="width: 1230px;background-color:white">
     <div class="">
@@ -359,12 +399,11 @@
         </div>
     </div>
 </div>
-<div class="mt-3 rounded" style="background: white; height:1200px">
-    
-</div>
+
 <div style="height:50px"></div>
 
 <style>
+    
     .product_view_info p{
         padding: 10px 0;
         border-bottom: 1px solid #eee;
@@ -396,6 +435,47 @@
         color: #fff;
         background-color: #C92127;
     }
+    .rating-container {
+            max-width: 400px;
+            margin: auto;
+        }
+        .rating-average {
+            text-align: center;
+        }
+        .rating-average h1 {
+            font-size: 48px;
+            margin: 0;
+            color: #C92127;
+        }
+        .rating-average span {
+            font-size: 24px;
+        }
+        .stars {
+            color: #FFD700;
+            font-size: 24px;
+        }
+        .rating-bar {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+        }
+        .rating-bar span {
+            flex: 1;
+            text-align: right;
+        }
+        .rating-bar .bar {
+            flex: 5;
+            margin: 0 10px;
+            height: 8px;
+            background-color: #E0E0E0;
+            position: relative;
+        }
+        .rating-bar .bar .fill {
+            height: 100%;
+            background-color: #FFD700;
+            width: 0;
+            position: absolute;
+        }
 </style>
 
 <script>

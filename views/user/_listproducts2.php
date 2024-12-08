@@ -120,27 +120,9 @@ foreach ($data['list_products'] as $key => $value) {
                                 </p>
                             <?php endif; ?>
                         </div>
-                        <div class="d-flex justify-content-center mt-3 ">
-                            <div class="sold-progress">
-                                <?php
-                                $quantity = $value['quantity'];
-                                $sold = $value['sold'];
-                                $percent = ($sold / $quantity) * 100;
-                                ?>
-                                <div class="progress-bar" style="width: <?php echo $percent; ?>%;"></div>
-                                <span>
-                                    <?php 
-                                    if ($percent >= 100) {
-                                        echo "Hết hàng";
-                                    } elseif ($percent >= 85) {
-                                        echo "Sắp hết";
-                                    } else {
-                                        echo "Đã bán $sold";
-                                    }
-                                    ?>
-                                </span>
-                            </div>
-                        </div>
+
+                        <!-- sold progress  -->
+                        <?php include '_sold_progress.php'?>
                     </a>
                 </div>
             <?php endforeach; ?>
@@ -149,11 +131,9 @@ foreach ($data['list_products'] as $key => $value) {
     <div class="scroll-btn left"><i class="fa-solid fa-angle-left"></i></div>
     <div class="scroll-btn right"><i class="fa-solid fa-angle-right"></i></div>
 </div>
-<div class="d-flex justify-content-center pb-3">
-        <button class="custom-btn btn py-2">
-            Xem thêm
-        </button>
-</div>
+
+<!-- showmore btn -->
+<?php include '_button_showmore.php'?>
 
 <style>
     .nav-tabs .nav-link {
@@ -165,19 +145,6 @@ foreach ($data['list_products'] as $key => $value) {
         color: #d90429;
         border-bottom: 2px solid #d90429;
         font-weight: bold;
-    }
-    .custom-btn {
-        width: 210px;
-        color: #C92127;
-        background-color: #fff;
-        border: 2px solid #C92127;
-        font-size: 14px;
-        font-weight: 700;
-    }
-    .custom-btn:hover {
-        background-color: #fff;
-        color: #C92127;
-        border: 2px solid #C92127;
     }
     .grid-container {
         display: grid;
@@ -199,28 +166,5 @@ foreach ($data['list_products'] as $key => $value) {
         color: #ff5722;
     }
 
-    .sold-progress {
-        position: relative;
-        background-color: #f2c7c7;
-        border-radius: 12px;
-        height: 17px;
-        width: 90%;
-        overflow: hidden;
-        }
 
-    .progress-bar {
-        height: 100%;
-        background-color: var(--primary);
-        border-radius: 12px 0 0 12px;
-        transition: width 0.3s ease;
-    }
-
-    .sold-progress span {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: white;
-        font-size: 12px;
-    }
 </style>
