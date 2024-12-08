@@ -1,6 +1,4 @@
 <?php
-
-
 $data['category'] = [
     1 => [
         'name' => 'Electronics',
@@ -158,7 +156,7 @@ $data['category'] = [
     </div>
 </div>
 
-<!-- Category list -->
+<!-- Category list 1-->
 <div class="container mt-5 pt-0 pb-3 px-3 rounded" style="width: 1230px; background: var(--white);">
     <div class="d-flex align-items-center py-3 border-bottom gap-2">
         <img src="./img/menu_red.svg" alt="Menu Icon">
@@ -217,14 +215,14 @@ $data['category'] = [
     </div>
 </div>
 
-<!-- list products -->
+<!-- list products 1 -->
 <div class="container px-0 mt-4 rounded" style="width: 1230px;background-color:white">
     <div class="">
         <div class="px-3">
             <div class="card-header border-bottom">
                 <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
                     <li class="nav-item">
-                        <button class="nav-link active py-2" id="login-tab" data-bs-toggle="tab" data-bs-target="#calendar"
+                        <button class="nav-link active pt-3 pb-2" id="login-tab" data-bs-toggle="tab" data-bs-target="#calendar"
                             type="button" role="tab" aria-selected="true">Lịch Bàn 2025</button>
                     </li>
                 </ul>
@@ -240,10 +238,20 @@ $data['category'] = [
     </div>
 </div>
 
-<!-- hot list products -->
-<?php include '_hotlist.php'?>
+<!-- hot list products 1-->
+<div class="container px-0 pb-3 mt-4 rounded position-relative" style="width: 1230px; background-color:white;">
+    <div class="d-flex align-items-center py-3 px-3 gap-2 rounded-top" style="background-color: var(--fourth);">
+        <img src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/category/ico_sachtrongnuoc.svg" alt="" width="32px">
+        <p class="fs-5 fw-bold">TỦ SÁCH NỔI BẬT</p>
+    </div> 
+    <div class="list_product-scroll-container scroll-container px-2">
+        <?php include '_hotlist.php'?>
+    </div>
+    <div class="scroll-btn left" style="top:150px;left:-30px"><i class="fa-solid fa-angle-left"></i></div>
+    <div class="scroll-btn right" style="top:150px;right:-30px"><i class="fa-solid fa-angle-right"></i></div>
+</div>
 
-<!-- banner & bestproducts -->
+<!-- banner & bestproducts 1-->
 <div class="container mt-3 p-0" style="width: 1230px;">
     <div class="d-flex justify-content-between gap-2">
         <div class="rounded py-2 px-3" style="background:white;">
@@ -329,9 +337,517 @@ $data['category'] = [
     </div>
 </div>
 
+<!-- list products 2-->
+<div class="container px-0 mt-4 rounded" style="width: 1230px;background-color:white">
+    <div class="">
+        <div class="px-3 pt-3 pb-2">
+            <div class="d-flex align-items-center gap-2">
+                <img src="https://cdn0.fahasa.com/media/wysiwyg/icon-menu/icon_dealhot_new.png" alt="" width="24px">
+                <p class="fw-bold" style="font-size: 17px;text-transform: uppercase;">Thương hiệu nổi bật</p>
+            </div>
+            <div class="card-header border-bottom">
+                <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <button class="nav-link active pt-3 pb-2" id="login-tab" data-bs-toggle="tab" data-bs-target="#calendar"
+                            type="button" role="tab" aria-selected="true">Mcbooks</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link pt-3 pb-2" id="login-tab" data-bs-toggle="tab" data-bs-target="#calendar"
+                            type="button" role="tab" aria-selected="true">Bitex</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link pt-3 pb-2" id="login-tab" data-bs-toggle="tab" data-bs-target="#calendar"
+                            type="button" role="tab" aria-selected="true">First News</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link pt-3 pb-2" id="login-tab" data-bs-toggle="tab" data-bs-target="#calendar"
+                            type="button" role="tab" aria-selected="true">Hương Trang</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body ">
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="calendar" role="tabpanel" aria-labelledby="login-tab">
+                        <?php include '_listproducts2.php'?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- list products 3-->
+<div class="container px-0 mt-4 rounded" style="width: 1230px;background-color:white">
+    <div class="">
+        <div class="px-3">
+            <div class="card-header border-bottom">
+                <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <button class="nav-link active pt-3 pb-2" id="login-tab" data-bs-toggle="tab" data-bs-target="#calendar"
+                            type="button" role="tab" aria-selected="true">Mcbooks</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link pt-3 pb-2" id="login-tab" data-bs-toggle="tab" data-bs-target="#calendar"
+                            type="button" role="tab" aria-selected="true">Bitex</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link pt-3 pb-2" id="login-tab" data-bs-toggle="tab" data-bs-target="#calendar"
+                            type="button" role="tab" aria-selected="true">First News</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link pt-3 pb-2" id="login-tab" data-bs-toggle="tab" data-bs-target="#calendar"
+                            type="button" role="tab" aria-selected="true">Hương Trang</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body ">
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="calendar" role="tabpanel" aria-labelledby="login-tab">
+                        <?php include '_listproducts2.php'?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- list products 4-->
+<div class="container px-0 mt-4 rounded" style="width: 1230px;background-color:white">
+    <div class="">
+        <div class="px-3 pt-3 pb-2">
+            <div class="d-flex align-items-center gap-2">
+                <img src="https://cdn0.fahasa.com/media/wysiwyg/Thang-11-2023/icon_new.png" alt="" width="24px">
+                <p class="fw-bold" style="font-size: 17px">Combo trending</p>
+            </div>
+            <div class="card-header border-bottom">
+                <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <button class="nav-link active pt-3 pb-2" id="login-tab" data-bs-toggle="tab" data-bs-target="#calendar"
+                            type="button" role="tab" aria-selected="true">Combo kinh tế</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link pt-3 pb-2" id="login-tab" data-bs-toggle="tab" data-bs-target="#calendar"
+                            type="button" role="tab" aria-selected="true">Combo Sách Học Ngoại Ngữ</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link pt-3 pb-2" id="login-tab" data-bs-toggle="tab" data-bs-target="#calendar"
+                            type="button" role="tab" aria-selected="true">Combo Tâm Lý - Kỹ Năng Sống</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link pt-3 pb-2" id="login-tab" data-bs-toggle="tab" data-bs-target="#calendar"
+                            type="button" role="tab" aria-selected="true">Combo Văn Học</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body ">
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="calendar" role="tabpanel" aria-labelledby="login-tab">
+                        <?php include '_listproducts2.php'?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- banner & bestproducts 2-->
+<div class="container mt-3 p-0" style="width: 1230px;">
+    <div class="d-flex justify-content-between gap-2">
+        <div class="rounded py-2 px-3" style="background:white;">
+            <div class="d-flex justify-content-between align-items-center">
+                <p class="fw-bold" style="font-size: 18px;">Thiếu nhi</p>
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+            <div class="mt-3">
+                <img src="https://placehold.co/800x400/png" class="rounded-top" width="100%" height="165px">
+            </div>
+            <div class="d-flex justify-content-between gap-2 mt-2 mb-2">
+                <div class="">
+                    <img src="https://placehold.co/400" alt="" width="100%">
+                </div>
+                <div class="">
+                    <img src="https://placehold.co/400" alt="" width="100%">
+                </div>
+                <div class="">
+                    <img src="https://placehold.co/400" alt="" width="100%">
+                </div>
+            </div>
+        </div>
+        <div class="rounded py-2 px-3" style="background:white;">
+            <div class="d-flex justify-content-between align-items-center">
+                <p class="fw-bold" style="font-size: 18px;">Thiếu nhi</p>
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+            <div class="mt-3">
+                <img src="https://placehold.co/800x400/png" class="rounded-top" width="100%" height="165px">
+            </div>
+            <div class="d-flex justify-content-between gap-2 mt-2 mb-2">
+                <div class="">
+                    <img src="https://placehold.co/400" alt="" width="100%">
+                </div>
+                <div class="">
+                    <img src="https://placehold.co/400" alt="" width="100%">
+                </div>
+                <div class="">
+                    <img src="https://placehold.co/400" alt="" width="100%">
+                </div>
+            </div>
+        </div>
+        <div class="rounded py-2 px-3" style="background:white;">
+            <div class="d-flex justify-content-between align-items-center">
+                <p class="fw-bold" style="font-size: 18px;">Thiếu nhi</p>
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+            <div class="mt-3">
+                <img src="https://placehold.co/800x400/png" class="rounded-top" width="100%" height="165px">
+            </div>
+            <div class="d-flex justify-content-between gap-2 mt-2 mb-2">
+                <div class="">
+                    <img src="https://placehold.co/400" alt="" width="100%">
+                </div>
+                <div class="">
+                    <img src="https://placehold.co/400" alt="" width="100%">
+                </div>
+                <div class="">
+                    <img src="https://placehold.co/400" alt="" width="100%">
+                </div>
+            </div>
+        </div>
+        <div class="rounded py-2 px-3" style="background:white;">
+            <div class="d-flex justify-content-between align-items-center">
+                <p class="fw-bold" style="font-size: 18px;">Thiếu nhi</p>
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+            <div class="mt-3">
+                <img src="https://placehold.co/800x400/png" class="rounded-top" width="100%" height="165px">
+            </div>
+            <div class="d-flex justify-content-between gap-2 mt-2 mb-2">
+                <div class="">
+                    <img src="https://placehold.co/400" alt="" width="100%">
+                </div>
+                <div class="">
+                    <img src="https://placehold.co/400" alt="" width="100%">
+                </div>
+                <div class="">
+                    <img src="https://placehold.co/400" alt="" width="100%">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- list products 5-->
+<div class="container px-0 mt-4 rounded" style="width: 1230px;background-color:white">
+    <div class="">
+        <div class="px-3 pt-3 pb-2">
+            <div class="d-flex align-items-center gap-2">
+                <img src="https://cdn0.fahasa.com/media/wysiwyg/Thang-11-2023/icon_new.png" alt="" width="24px">
+                <p class="fw-bold" style="font-size: 17px">Foreign Books</p>
+            </div>
+            <div class="card-header border-bottom">
+                <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <button class="nav-link active pt-3 pb-2" id="login-tab" data-bs-toggle="tab" data-bs-target="#calendar"
+                            type="button" role="tab" aria-selected="true">Dictionaries & Languages</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link pt-3 pb-2" id="login-tab" data-bs-toggle="tab" data-bs-target="#calendar"
+                            type="button" role="tab" aria-selected="true">Fiction</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link pt-3 pb-2" id="login-tab" data-bs-toggle="tab" data-bs-target="#calendar"
+                            type="button" role="tab" aria-selected="true">Children's Books</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link pt-3 pb-2" id="login-tab" data-bs-toggle="tab" data-bs-target="#calendar"
+                            type="button" role="tab" aria-selected="true">Other languages</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body ">
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="calendar" role="tabpanel" aria-labelledby="login-tab">
+                        <?php include '_listproducts2.php'?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Best seller 2 -->
+<div class="container px-0 mt-4 rounded" style="width: 1230px;background-color:white">
+    <div class="px-4 ">
+        <div class="card-header border-bottom">
+            <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <button class="nav-link active py-3" id="login-tab" data-bs-toggle="tab" data-bs-target="#day"
+                        type="button" role="tab" aria-selected="true">Xu Hướng Theo Ngày</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link py-3" id="register-tab" data-bs-toggle="tab" data-bs-target="#hot"
+                        type="button" role="tab" aria-selected="false">Sách HOT - Giảm Sốc</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link py-3" id="register-tab" data-bs-toggle="tab" data-bs-target="#bestseller"
+                        type="button" role="tab" aria-selected="false">Bestseller Ngoại Văn</button>
+                </li>
+            </ul>
+        </div>
+        <div class="card-body ">
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="day" role="tabpanel" aria-labelledby="login-tab">
+                    <?php include '_listproducts1.php'?>
+                </div>
+                <div class="tab-pane fade" id="hot" role="tabpanel" aria-labelledby="register-tab">
+                    <?php include '_listproducts1.php'?>
+                    2
+                </div>
+                <div class="tab-pane fade" id="bestseller" role="tabpanel" aria-labelledby="register-tab">
+                    <?php include '_listproducts1.php'?>
+                    3
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- banner & bestproducts 3-->
+<div class="container mt-3 p-0" style="width: 1230px;">
+    <div class="d-flex justify-content-between gap-2">
+        <div class="rounded py-2 px-3" style="background:white;">
+            <div class="d-flex justify-content-between align-items-center">
+                <p class="fw-bold" style="font-size: 18px;">Thiếu nhi</p>
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+            <div class="mt-3">
+                <img src="https://placehold.co/800x400/png" class="rounded-top" width="100%" height="165px">
+            </div>
+            <div class="d-flex justify-content-between gap-2 mt-2 mb-2">
+                <div class="">
+                    <img src="https://placehold.co/400" alt="" width="100%">
+                </div>
+                <div class="">
+                    <img src="https://placehold.co/400" alt="" width="100%">
+                </div>
+                <div class="">
+                    <img src="https://placehold.co/400" alt="" width="100%">
+                </div>
+            </div>
+        </div>
+        <div class="rounded py-2 px-3" style="background:white;">
+            <div class="d-flex justify-content-between align-items-center">
+                <p class="fw-bold" style="font-size: 18px;">Thiếu nhi</p>
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+            <div class="mt-3">
+                <img src="https://placehold.co/800x400/png" class="rounded-top" width="100%" height="165px">
+            </div>
+            <div class="d-flex justify-content-between gap-2 mt-2 mb-2">
+                <div class="">
+                    <img src="https://placehold.co/400" alt="" width="100%">
+                </div>
+                <div class="">
+                    <img src="https://placehold.co/400" alt="" width="100%">
+                </div>
+                <div class="">
+                    <img src="https://placehold.co/400" alt="" width="100%">
+                </div>
+            </div>
+        </div>
+        <div class="rounded py-2 px-3" style="background:white;">
+            <div class="d-flex justify-content-between align-items-center">
+                <p class="fw-bold" style="font-size: 18px;">Thiếu nhi</p>
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+            <div class="mt-3">
+                <img src="https://placehold.co/800x400/png" class="rounded-top" width="100%" height="165px">
+            </div>
+            <div class="d-flex justify-content-between gap-2 mt-2 mb-2">
+                <div class="">
+                    <img src="https://placehold.co/400" alt="" width="100%">
+                </div>
+                <div class="">
+                    <img src="https://placehold.co/400" alt="" width="100%">
+                </div>
+                <div class="">
+                    <img src="https://placehold.co/400" alt="" width="100%">
+                </div>
+            </div>
+        </div>
+        <div class="rounded py-2 px-3" style="background:white;">
+            <div class="d-flex justify-content-between align-items-center">
+                <p class="fw-bold" style="font-size: 18px;">Thiếu nhi</p>
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+            <div class="mt-3">
+                <img src="https://placehold.co/800x400/png" class="rounded-top" width="100%" height="165px">
+            </div>
+            <div class="d-flex justify-content-between gap-2 mt-2 mb-2">
+                <div class="">
+                    <img src="https://placehold.co/400" alt="" width="100%">
+                </div>
+                <div class="">
+                    <img src="https://placehold.co/400" alt="" width="100%">
+                </div>
+                <div class="">
+                    <img src="https://placehold.co/400" alt="" width="100%">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- list products 6-->
+<div class="container px-0 mt-4 rounded" style="width: 1230px;background-color:white">
+    <div class="">
+        <div class="px-3 pt-3 pb-2">
+            <div class="d-flex align-items-center gap-2">
+                <img src="https://cdn0.fahasa.com/media/wysiwyg/icon-menu/ico-dochoi_1.png" alt="" width="24px">
+                <p class="fw-bold" style="font-size: 17px">Manga nổi bật</p>
+            </div>
+            <div class="card-header border-bottom">
+                <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <button class="nav-link active pt-3 pb-2" id="login-tab" data-bs-toggle="tab" data-bs-target="#calendar"
+                            type="button" role="tab" aria-selected="true">Manga Mới</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link pt-3 pb-2" id="login-tab" data-bs-toggle="tab" data-bs-target="#calendar"
+                            type="button" role="tab" aria-selected="true">Light Novel Mới</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body ">
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="calendar" role="tabpanel" aria-labelledby="login-tab">
+                        <?php include '_listproducts2.php'?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- list products 7-->
+<div class="container px-0 mt-4 rounded" style="width: 1230px;background-color:white">
+    <div class="">
+        <div class="px-3 pt-3 pb-2">
+            <div class="d-flex align-items-center gap-2">
+                <img src="https://cdn0.fahasa.com/media/wysiwyg/icon-menu/Icon_SachThieuNhi_120x120.png" alt="" width="24px">
+                <p class="fw-bold" style="font-size: 17px">Văn phòng phẩm nổi bật</p>
+            </div>
+            <div class="card-header border-bottom">
+                <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <button class="nav-link active pt-3 pb-2" id="login-tab" data-bs-toggle="tab" data-bs-target="#calendar"
+                            type="button" role="tab" aria-selected="true">Máy tính điện tử</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link pt-3 pb-2" id="login-tab" data-bs-toggle="tab" data-bs-target="#calendar"
+                            type="button" role="tab" aria-selected="true">Màu Arcrylic</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link pt-3 pb-2" id="login-tab" data-bs-toggle="tab" data-bs-target="#calendar"
+                            type="button" role="tab" aria-selected="true">Bút - Viết</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body ">
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="calendar" role="tabpanel" aria-labelledby="login-tab">
+                        <?php include '_listproducts2.php'?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Best seller -->
+<div class="container px-0 mt-4 rounded" style="width: 1230px;background-color:white">
+    <div class="d-flex align-items-center py-3 px-3 gap-2 rounded-top">
+        <img src="https://cdn0.fahasa.com/media/wysiwyg/icon-menu/ico-dochoi_1.png" alt="" width="24px">
+        <p class="fw-bold" style="font-size:18px">Đồ chơi</p>
+    </div> 
+    <div class="px-4 ">
+        <div class="card-header border-bottom">
+            <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <button class="nav-link active py-3" id="login-tab" data-bs-toggle="tab" data-bs-target="#day"
+                        type="button" role="tab" aria-selected="true">Mô hình nhân vật</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link py-3" id="register-tab" data-bs-toggle="tab" data-bs-target="#hot"
+                        type="button" role="tab" aria-selected="false">Robot - Siêu nhân</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link py-3" id="register-tab" data-bs-toggle="tab" data-bs-target="#bestseller"
+                        type="button" role="tab" aria-selected="false">Đồ Chơi Lắp Ráp</button>
+                </li>
+            </ul>
+        </div>
+        <div class="card-body ">
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="day" role="tabpanel" aria-labelledby="login-tab">
+                    <?php include '_listproducts1.php'?>
+                </div>
+                <div class="tab-pane fade" id="hot" role="tabpanel" aria-labelledby="register-tab">
+                    <?php include '_listproducts1.php'?>
+                    2
+                </div>
+                <div class="tab-pane fade" id="bestseller" role="tabpanel" aria-labelledby="register-tab">
+                    <?php include '_listproducts1.php'?>
+                    3
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- list products 8-->
+<div class="container px-0 mt-4 rounded" style="width: 1230px;background-color:white">
+    <div class="">
+        <div class="px-3 pb-2">
+            <div class="card-header border-bottom">
+                <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <button class="nav-link active pt-3 pb-2" id="login-tab" data-bs-toggle="tab" data-bs-target="#calendar"
+                            type="button" role="tab" aria-selected="true">Đèn bàn</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link pt-3 pb-2" id="login-tab" data-bs-toggle="tab" data-bs-target="#calendar"
+                            type="button" role="tab" aria-selected="true">Bình nước</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link pt-3 pb-2" id="login-tab" data-bs-toggle="tab" data-bs-target="#calendar"
+                            type="button" role="tab" aria-selected="true">Pin</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body ">
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="calendar" role="tabpanel" aria-labelledby="login-tab">
+                        <?php include '_listproducts2.php'?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- hot list products 2-->
+<div class="container px-0 pb-3 mt-4 rounded position-relative" style="width: 1230px; background-color:white;">
+    <div class="list_product-scroll-container scroll-container px-2">
+        <?php include '_hotlist.php'?>
+    </div>
+    <div class="scroll-btn left" style="top:100px;left:-30px"><i class="fa-solid fa-angle-left"></i></div>
+    <div class="scroll-btn right" style="top:100px;right:-30px"><i class="fa-solid fa-angle-right"></i></div>
+</div>
+
 
 <!-- subcribe -->
-<div class="container mt-3 p-3 mb-3 rounded-top" style="width: 1230px;background:rgb(159 167 171)">
+<div class="container mt-5 p-3 mb-3 rounded-top" style="width: 1230px;background:rgb(159 167 171)">
     <div class="d-flex justify-content-center">
     <div class="d-flex" style="width:950px">
         <div class="d-flex align-items-center gap-2">
@@ -350,6 +866,8 @@ $data['category'] = [
         </div>
     </div>
 </div>
+
+
 </div>
 <style>
     p {

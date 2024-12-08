@@ -26,11 +26,10 @@ $data['category'] = [
         'slug' => 'toys',
     ],
 ];
-
 ?>
 
 
-<div style="">
+<div>
     <div style="background-color:var(--secondary)" class="d-flex justify-content-center">
         <div class="container">
             <img src="./img/top_banner.webp" height="auto" width="100%">
@@ -111,7 +110,6 @@ $data['category'] = [
     display: block;
     z-index: 1000;
 }
-
 .dropdown>.dropdown-toggle:active {
     pointer-events: none;
 }

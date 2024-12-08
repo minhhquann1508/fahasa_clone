@@ -326,7 +326,7 @@
             <div class="card-header border-bottom">
                 <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
                     <li class="nav-item">
-                        <button class="nav-link active py-2" id="login-tab" data-bs-toggle="tab" data-bs-target="#calendar"
+                        <button class="nav-link active pt-3 pb-2" id="login-tab" data-bs-toggle="tab" data-bs-target="#calendar"
                             type="button" role="tab" aria-selected="true">Series bộ</button>
                     </li>
                 </ul>
