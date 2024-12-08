@@ -9,3 +9,11 @@
 .side-bar-active {
     background-color: #eeeeee;
 }
+
+#type_input {
+    border: none;
+}
+
+#type_input:focus {
+    outline: none;
+}
