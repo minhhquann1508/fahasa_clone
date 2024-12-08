@@ -39,19 +39,27 @@ class User {
             return false;
         }
     }
+    
     // Lấy thông tin user theo id
     public static function get_UserById($id) {
         try {
             $conn = Database::get_connection();
+            if (!$conn) {
+                throw new Exception('Không thể kết nối đến cơ sở dữ liệu');
+            }
+    
             $stmt = $conn->prepare("SELECT * FROM user WHERE id = :id");
-            $stmt->bindValue(":id", $id);
+            $stmt->bindValue(":id", (int)$id, PDO::PARAM_INT);
             $stmt->execute();
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
             return $result;
         } catch (PDOException $e) {
             return false;
+        } catch (Exception $e) {
+            return false;
         }
     }
+    
     // Kiểm tra email tồn tại
     public static function checkmail($email) {
         try {
@@ -84,7 +92,7 @@ class User {
         $stmt = $conn->prepare($sql);
         $stmt->bindValue(':name', $name);
         $stmt->bindValue(':email', $email);
-        $stmt->bindValue(':phone', $phone);
+        $stmt->bindValue(':phone', $phone); 
         $stmt->bindValue(':gender', $gender);
         $stmt->bindValue(':birthday', $birthday);
         $stmt->bindValue(':id', $id, PDO::PARAM_INT);
@@ -104,14 +112,14 @@ class User {
     public function updateAdress($id, $name, $phone, $city, $district, $ward, $address) {
         try {
         $conn = Database::get_connection();
-        $sql = "UPDATE user SET name = :name, phone = :phone, city = :city, district = :district, ward = :ward, address = :adderss WHERE id = :id";
+        $sql = "UPDATE user SET name = :name, phone = :phone, city = :city, district = :district, ward = :ward, address = :address WHERE id = :id";
         $stmt = $conn->prepare($sql);
         $stmt->bindValue(':name', $name);
         $stmt->bindValue(':phone', $phone);
         $stmt->bindValue(':city', $city);
         $stmt->bindValue(':district', $district);
         $stmt->bindValue(':ward', $ward);
-        $stmt->bindValue(':adderss', $address);
+        $stmt->bindValue(':address', $address);
         $stmt->bindValue(':id', $id, PDO::PARAM_INT);
 
         

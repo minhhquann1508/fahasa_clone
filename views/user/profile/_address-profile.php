@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $id = $_SESSION['user']; 
+    $id = $_SESSION['user']['id']; 
     $name = $_POST['name'];
     $phone = $_POST['phone'];
     $city = $_POST['city'];
@@ -91,19 +91,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 40px;
 }
 
 .form-address {
     padding: 20px;
     border-radius: 10px;
     background-color: #fff;
-}
-
-.wrapper-address .form-address {
-    padding: 20px;
-    background-color: #f5f5f5;
-    border-radius: 10px;
 }
 
 .form-address h3 {
