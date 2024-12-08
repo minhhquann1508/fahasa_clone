@@ -155,4 +155,72 @@ foreach ($data['list_products'] as $key => $value) {
         </button>
 </div>
 
+<style>
+    .nav-tabs .nav-link {
+        border: none;
+        font-size: 14px;
+        color: #666;
+    }
+    .nav-tabs .nav-link.active {
+        color: #d90429;
+        border-bottom: 2px solid #d90429;
+        font-weight: bold;
+    }
+    .custom-btn {
+        width: 210px;
+        color: #C92127;
+        background-color: #fff;
+        border: 2px solid #C92127;
+        font-size: 14px;
+        font-weight: 700;
+    }
+    .custom-btn:hover {
+        background-color: #fff;
+        color: #C92127;
+        border: 2px solid #C92127;
+    }
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr); 
+        gap: 10px; 
+    }
 
+    .product-image {
+        width: 100%; 
+        height: auto;
+    }
+
+    .product-title {
+        color: #333333;
+    }
+
+    .product-price {
+        font-size: 0.9rem;
+        color: #ff5722;
+    }
+
+    .sold-progress {
+        position: relative;
+        background-color: #f2c7c7;
+        border-radius: 12px;
+        height: 17px;
+        width: 90%;
+        overflow: hidden;
+        }
+
+    .progress-bar {
+        height: 100%;
+        background-color: var(--primary);
+        border-radius: 12px 0 0 12px;
+        transition: width 0.3s ease;
+    }
+
+    .sold-progress span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 12px;
+    }
+</style>
