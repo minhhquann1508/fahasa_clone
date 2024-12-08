@@ -22,6 +22,7 @@
     </script>
     <title>Trang quản trị</title>
 </head>
+
 <body>
     <!-- Toast -->
     <?php showToast();?>
