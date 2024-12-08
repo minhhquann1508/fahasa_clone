@@ -26,7 +26,7 @@
         }
 
         public function type() {
-            $main_view = './views/admin/type.php';
+            $main_view = './views/admin/type/type.php';
             include_once './views/admin/layout.php';
         }
 
