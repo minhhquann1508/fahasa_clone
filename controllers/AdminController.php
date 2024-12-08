@@ -11,9 +11,10 @@
         }
 
         public function supplier() {
-            $main_view = './views/admin/supplier.php';
+            $main_view = './views/admin/supplier/supplier.php';
             include_once './views/admin/layout.php';
         }
+
 
         public function product() {
             $main_view = './views/admin/product/product.php';
