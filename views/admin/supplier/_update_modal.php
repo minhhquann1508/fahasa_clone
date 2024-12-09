@@ -1,3 +1,33 @@
+<?php 
+    include_once './configs/helper.php';
+
+    if(isset($_POST['update_supplier'])) {
+        $id = $_POST['id'];
+        $name = $_POST['name'];
+        $description = $_POST['description'];
+        $thumbnail = $_FILES['file'] && $_FILES['file']['error'] === UPLOAD_ERR_OK ? upload_file($_FILES['file']['tmp_name']) : $_POST['thumbnail'];
+        $is_show = isset($_POST['is_show']) ? 1 : 0;
+        $slug = slugify($name);
+        $url = 'admin.php?page=supplier';
+
+        $supplier = [
+            'id' => $id,
+            'name' => $name,
+            'thumbnail' => $thumbnail,
+            'slug' => $slug,
+            'is_show' => $is_show,
+            'description' => $description
+        ];
+
+        $update_supplier = Supplier::update_supplier($supplier);
+
+        if($update_supplier['status']) {
+            redirect($url, $update_supplier['message'], "success");
+        } else {
+            redirect($url, $update_supplier['message'], "error");
+        }
+    }
+?>
 <div class="modal fade" id="update_supplier_modal" data-bs-backdrop="static" tabindex="-1"
     aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
@@ -8,7 +38,7 @@
             </div>
             <div class="modal-body">
                 <div class="mb-3">
-                    <input type="hidden" id="update-supplier-id">
+                    <input name="id" type="hidden" id="update-supplier-id">
                     <label for="exampleInputEmail1" class="form-label">Tên nhà cung cấp</label>
                     <input type="text" id="update-supplier-name" name="name"
                         placeholder="Nhập vào tên nhà cung cấp của bạn" class="form-control">

@@ -3,7 +3,18 @@
     include_once './configs/helper.php';
 
     class Category {
-        public static function get_all_category($show_all = false, $page = 1, $page_size = 10) {
+        public static function get_all_categories() {
+            try {
+                $conn = Database::get_connection();
+                $sql = "SELECT * FROM category WHERE is_show = 1";
+                $stmt = $conn->query($sql);
+                return return_data(true, $stmt->fetchAll(PDO::FETCH_ASSOC), 'Hiển thị danh mục thành công');
+            } catch (PDOException $e) {
+                return return_data(false, [], $e->getMessage());
+            }
+        }
+
+        public static function get_all_category_pagination($show_all = false, $page = 1, $page_size = 10) {
             try {
                 $conn = Database::get_connection();
                 $format_page = ((int)$page - 1) * $page_size;
