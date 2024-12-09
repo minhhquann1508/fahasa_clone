@@ -184,7 +184,7 @@ $user = User::get_UserById($id);
 
 .main-content {
     width: 75%;
-    background-color: #fff;
+    background-color: none;
     padding: 20px;
 }
 

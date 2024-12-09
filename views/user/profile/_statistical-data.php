@@ -9,7 +9,7 @@ if (isset($_POST['update-personal'])) {
     $month = $_POST['month'];
     $year = $_POST['year'];
     
-    $id = $_SESSION['user']; 
+    $id = $_SESSION['user']['id']; 
     
     $user = new User();
     $result = $user->updatePersonal($id, $name, $email, $phone, $gender, $day, $month, $year);
@@ -164,14 +164,14 @@ if (isset($_POST['update-personal'])) {
 
 .wrapper-statiscal .up-statiscal {
     padding: 20px;
-    background-color: #f5f5f5;
     border-radius: 10px;
+    background-color: #fff;
 }
 
 .wrapper-statiscal .profile-statiscal {
     padding: 20px;
-    background-color: #f5f5f5;
     border-radius: 10px;
+    background-color: #fff;
 }
 
 .profile-statiscal h3 {
