@@ -1,4 +1,5 @@
 <?php include_once './utils/libs.php'?>
+<?php include_once './utils/routes.php'?>
 <?php include_once '_data_handler.php'?>
 <!DOCTYPE html>
 <html lang="en">

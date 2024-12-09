@@ -1,5 +1,4 @@
-<?php
-?>
+<?php $data['category'] = category(); ?>
 
 <div>
     <div style="background-color: var(--secondary);" class="d-flex justify-content-center">
@@ -11,7 +10,9 @@
         <div class="container p-0" style="width:1230px;">
             <div class="d-flex align-items-center justify-content-between" style="height: 68px;">
                 <div>
-                    <img src="./img/logo.webp" style="width:220px; vertical-align: middle;">
+                    <a href="<?php echo home?>">
+                        <img src="./img/logo.webp" style="width:220px; vertical-align: middle;">
+                    </a>
                 </div>
                 <div class="d-flex gap-3">
                     <div class="d-flex align-items-center gap-2 position-relative" style="height: 68px;">
