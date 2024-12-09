@@ -3,7 +3,7 @@
     include_once './utils/constant.php';
     // $id = isset($_GET['id']) ? $_GET['id'] : null;
     $page = isset($_GET['page_index']) ? $_GET['page_index'] : 1;
-    $category_data = Category::get_all_category(true, $page, $PAGE_SIZE);
+    $category_data = Category::get_all_category_pagination(true, $page, $PAGE_SIZE);
 
     if(isset($_POST['delete_category'])) {
         $id = $_POST['id'];

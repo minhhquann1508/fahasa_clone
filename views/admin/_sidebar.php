@@ -13,9 +13,9 @@
     ];
 ?>
 <article class="py-3">
-    <div class="mx-auto" style="width: 200px;">
+    <a href="index.php" class="mx-auto d-block" style="width: 200px;">
         <img class="w-100" src="./img/logo.webp" alt="">
-    </div>
+    </a>
     <ul class="mt-3">
         <?php 
             foreach ($list as $item) {
