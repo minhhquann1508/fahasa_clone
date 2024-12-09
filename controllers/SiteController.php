@@ -13,6 +13,10 @@
             include_once './views/user/layout.php';
         }
         public function test() {
+            $main_view = './views/user/test.php';
+            include_once './views/user/layout.php';
+        }
+        public function detail() {
             $main_view = './views/user/product_detail.php';
             include_once './views/user/layout.php';
         }

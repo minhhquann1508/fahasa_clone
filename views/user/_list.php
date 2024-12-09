@@ -33,7 +33,7 @@ function showScrollableList($img, $title, $tabs, $id, $links) {
                             <div class="tab-pane fade <?php echo $index === 0 ? 'show active' : ''; ?>"
                                 id="<?php echo $id . '-content-' . $index ?>"
                                 role="tabpanel">
-                                <?php include $link; ?>
+                                <?php echo $link; ?>
                             </div>
                         <?php endforeach; ?>
                     </div>
@@ -73,7 +73,7 @@ function showScrollableList_WithoutHeader($tabs, $id, $links) {
                             <div class="tab-pane fade <?php echo $index === 0 ? 'show active' : ''; ?>"
                                 id="<?php echo $id . '-content-' . $index ?>"
                                 role="tabpanel">
-                                <?php include $link; ?>
+                                <?php echo $link; ?>
                             </div>
                         <?php endforeach; ?>
                     </div>
@@ -121,7 +121,7 @@ function showScrollableList_WithHeader( $img, $title, $tabs, $id, $links) {
                         role="tabpanel" 
                         aria-labelledby="<?php echo $id[$key]; ?>-tab"
                     >
-                        <?php include $link; ?>
+                        <?php echo $link; ?>
                     </div>
                 <?php endforeach; ?>
             </div>

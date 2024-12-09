@@ -1,19 +1,18 @@
 <?php
+$data['banners'] = banner();
 
-$data['carousel_img'] = [
-    1 => [
-        'url' => 'https://placehold.co/600x400/png',
-    ],
-    2 => [
-        'url' => 'https://placehold.co/200x400/png',
-    ],
-    3 => [
-        'url' => 'https://placehold.co/800x400/png',
-    ],
-];
+$data_detail['carousel'] = array_filter($data['banners'], function ($item) {
+    return $item['type'] === 'carousel';
+});
 
-$data['carousel_banner'] = [
-]
+$data_detail['banner_items'] = array_filter($data['banners'], function ($item) {
+    return $item['type'] === 'banner';
+});
+
+$data_detail['sub_banner'] = array_filter($data['banners'], function ($item) {
+    return $item['type'] === 'sub_banner';
+});
+
 ?>
 
 <div class="container mt-3 p-0" style="width: 1230px;">
@@ -21,21 +20,21 @@ $data['carousel_banner'] = [
         <div class="col-8">
             <div id="carouselExampleIndicators" class="carousel slide">
                 <div class="carousel-indicators">
-                    <?php foreach ($data['carousel_img'] as $key => $values) : ?>
+                    <?php foreach ($data_detail['carousel'] as $key => $values) : ?>
                         <button 
                             type="button" 
                             data-bs-target="#carouselExampleIndicators" 
-                            data-bs-slide-to="<?php echo $key - 1; ?>" 
-                            class="<?php echo $key === 1 ? 'active' : ''; ?>" 
-                            aria-current="<?php echo $key === 1 ? 'true' : 'false'; ?>" 
-                            aria-label="Slide <?php echo $key; ?>">
+                            data-bs-slide-to="<?php echo $key; ?>" 
+                            class="<?php echo $key === 0 ? 'active' : ''; ?>" 
+                            aria-current="<?php echo $key === 0 ? 'true' : 'false'; ?>" 
+                            aria-label="Slide <?php echo $key + 1; ?>">
                         </button>
                     <?php endforeach; ?>
                 </div>
                 <div class="carousel-inner">
-                    <?php foreach ($data['carousel_img'] as $key => $values) : ?>
-                        <div class="carousel-item <?php echo $key === 1 ? 'active' : ''; ?>">
-                            <img src="<?php echo $values['url']; ?>" class="d-block w-100 rounded" alt="Slide <?php echo $key; ?>" height="320">
+                    <?php foreach ($data_detail['carousel'] as $key => $values) : ?>
+                        <div class="carousel-item <?php echo $key === 0 ? 'active' : ''; ?>">
+                            <img src="<?php echo $values['url']; ?>" class="d-block w-100 rounded" alt="Slide <?php echo $key + 1; ?>" height="320">
                         </div>
                     <?php endforeach; ?>
                 </div>
@@ -51,27 +50,19 @@ $data['carousel_banner'] = [
         </div>
         <div class="col-4">
             <div class="d-flex flex-column gap-3">
-                <div>
-                    <img src="https://placehold.co/600x400/png" alt="" class="rounded" height="152px" width="100%">
-                </div>
-                <div>
-                    <img src="https://placehold.co/600x400/png" alt="" class="rounded" height="152px" width="100%">
-                </div>
+                <?php foreach ($data_detail['banner_items'] as $banner) : ?>
+                    <div>
+                        <img src="<?php echo $banner['url']; ?>" alt="" class="rounded" height="152px" width="100%">
+                    </div>
+                <?php endforeach; ?>
             </div>
         </div>
     </div>
     <div class="row mt-4">
-        <div class="col-3">
-            <img src="https://placehold.co/600x400/png" alt="" class="rounded" height="200px" width="100%">
-        </div>
-        <div class="col-3">
-            <img src="https://placehold.co/600x400/png" alt="" class="rounded" height="200px" width="100%">
-        </div>
-        <div class="col-3">
-            <img src="https://placehold.co/600x400/png" alt="" class="rounded" height="200px" width="100%">
-        </div>
-        <div class="col-3">
-            <img src="https://placehold.co/600x400/png" alt="" class="rounded" height="200px" width="100%">
-        </div>
+        <?php foreach ($data_detail['sub_banner'] as $subBanner) : ?>
+            <div class="col-3">
+                <img src="<?php echo $subBanner['url']; ?>" alt="" class="rounded" height="200px" width="100%">
+            </div>
+        <?php endforeach; ?>
     </div>
 </div>

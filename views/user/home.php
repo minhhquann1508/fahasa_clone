@@ -1,60 +1,7 @@
-<?php
-$data['category'] = [
-    1 => [
-        'name' => 'Electronics',
-        'thumbnail' => 'https://placehold.co/400',
-        'slug' => 'electronics',
-    ],
-    2 => [
-        'name' => 'Books',
-        'thumbnail' => 'https://placehold.co/400',
-        'slug' => 'books',
-    ],
-    3 => [
-        'name' => 'Clothing',
-        'thumbnail' => 'https://placehold.co/400',
-        'slug' => 'clothing',
-    ],
-    4 => [
-        'name' => 'Furniture',
-        'thumbnail' => 'https://placehold.co/400',
-        'slug' => 'furniture',
-    ],
-    5 => [
-        'name' => 'Toys',
-        'thumbnail' => 'https://placehold.co/400',
-        'slug' => 'toys',
-    ],
-    6 => [
-        'name' => 'Toys',
-        'thumbnail' => 'https://placehold.co/400',
-        'slug' => 'toys',
-    ],
-    7 => [
-        'name' => 'Toys',
-        'thumbnail' => 'https://placehold.co/400',
-        'slug' => 'toys',
-    ],
-    8 => [
-        'name' => 'Toys',
-        'thumbnail' => 'https://placehold.co/400',
-        'slug' => 'toys',
-    ],
-    9 => [
-        'name' => 'Toys',
-        'thumbnail' => 'https://placehold.co/400',
-        'slug' => 'toys',
-    ],
-    10 => [
-        'name' => 'Toys',
-        'thumbnail' => 'https://placehold.co/400',
-        'slug' => 'toys',
-    ],
 
-];
 
-?>
 <?php include_once './views/user/_list.php';?>
+<?php include_once './views/user/_listproduct.php';?>
 
 <div class="container pb-2 p-0" style="width: 1230px">
     <?php include_once '_carousel.php' ?>
@@ -158,6 +105,7 @@ $data['category'] = [
 </div>
 
 <!-- Category list 1-->
+<?php $data['category'] = category(); ?>
 <div class="container mt-5 pt-0 pb-3 px-3 rounded" style="width: 1230px; background: var(--white);">
     <div class="d-flex align-items-center py-3 border-bottom gap-2">
         <img src="./img/menu_red.svg" alt="Menu Icon">
@@ -185,7 +133,7 @@ $data['category'] = [
 <!-- list products 1 -->
 <?php  showScrollableList_WithoutHeader(["Lịch Bàn 2025"], 
                                          'calendars', 
-                                         ["_listproducts2.php"]) ?>
+                                         [list_products_scrollable($data['bestseller']  = bestseller())]) ?>
 
 <!-- Merry Chrismas -->
 <div class="container pb-4 px-2 mt-3 rounded" style="width: 1230px;background-color:white">
@@ -298,20 +246,22 @@ $data['category'] = [
                          "Thương hiệu nổi bật", 
                          ["Mcbooks", "Bitex", "First News", "Hương Trang"], 
                          "highlighted-brands", 
-                         ["_listproducts2.php","_listproducts2.php","_listproducts2.php","_listproducts2.php"]);?>
+                         [list_products_scrollable($data['bestseller']  = bestseller()),list_products_scrollable($data['bestseller']  = bestseller()),
+                          list_products_scrollable($data['bestseller']  = bestseller()),list_products_scrollable($data['list_products']  = list_products())]) ?>
 
 <!-- list products 3-->
 <?php  showScrollableList_WithoutHeader(["Tân Việt", "Thiên Long", "Deli", "Colormate"], 
                                          'ads', 
-                                         ["_listproducts2.php","_listproducts2.php",
-                                         "_listproducts2.php","_listproducts2.php"]) ?>
+                                         [list_products_scrollable($data['bestseller']  = bestseller()),list_products_scrollable($data['bestseller']  = bestseller()),
+                                          list_products_scrollable($data['bestseller']  = bestseller()),list_products_scrollable($data['list_products']  = list_products())]) ?>
 
 <!-- list products 4-->
 <?php showScrollableList("https://cdn0.fahasa.com/media/wysiwyg/Thang-11-2023/icon_new.png", 
                          "Combo trending", 
                          ["Combo kinh tế", "Combo Sách Học Ngoại Ngữ", "Combo Tâm Lý - Kỹ Năng Sống", "Combo Văn Học"], 
                          "combo-books", 
-                         ["_listproducts2.php","_listproducts2.php","_listproducts2.php","_listproducts2.php"]);?>
+                         [list_products_scrollable($data['bestseller']  = bestseller()),list_products_scrollable($data['bestseller']  = bestseller()),
+                         list_products_scrollable($data['bestseller']  = bestseller()),list_products_scrollable($data['bestseller']  = bestseller())]);?>
 
 <!-- banner & bestproducts 2-->
 <div class="container mt-3 p-0" style="width: 1230px;">
@@ -362,13 +312,14 @@ $data['category'] = [
                          "Foreign Books", 
                          ["Dictionaries & Languages", "Fiction", "Children's Books", "Other languages"], 
                          "foreign-books", 
-                         ["_listproducts2.php","_listproducts2.php","_listproducts2.php","_listproducts2.php"]);?>
+                         [list_products_scrollable($data['bestseller']  = bestseller()),list_products_scrollable($data['bestseller']  = bestseller()),
+                         list_products_scrollable($data['bestseller']  = bestseller()),list_products_scrollable($data['bestseller']  = bestseller())]);?>
 
 <!-- Best seller 2 -->
 <?php  showScrollableList_WithoutHeader(["Truyện thiếu nhi", "Kiến thức - Kỹ Năng Sống Cho Trẻ", "Kiến Thức Bách Khoa", "Sách Âm Thanh"], 
                                          'random-books', 
-                                         ["_listproducts1.php","_listproducts1.php",
-                                         "_listproducts1.php", "_listproducts1.php"]) ?>
+                                         [list_products_scrollable($data['bestseller']  = bestseller()),list_products_scrollable($data['bestseller']  = bestseller()),
+                                         list_products_scrollable($data['bestseller']  = bestseller()),list_products_scrollable($data['bestseller']  = bestseller())]) ?>
 
 <!-- banner & bestproducts 3-->
 <div class="container mt-3 p-0" style="width: 1230px;">
@@ -419,14 +370,14 @@ $data['category'] = [
                          "Manga nổi bật", 
                          ["Manga Mới", "Light Novel Mới"], 
                          "manga-books", 
-                         ["_listproducts2.php","_listproducts2.php"]);?>
+                         [list_products_scrollable($data['bestseller']  = bestseller()),list_products_scrollable($data['bestseller']  = bestseller())]);?>
 
 <!-- list products 7-->
 <?php showScrollableList("https://cdn0.fahasa.com/media/wysiwyg/icon-menu/Icon_SachThieuNhi_120x120.png", 
                          "Văn phòng phẩm nổi bật", 
                          ["Máy tính điện tử", "Màu Arcrylic","Bút - Viết"], 
                          "working-books", 
-                         ["_listproducts2.php","_listproducts2.php","_listproducts2.php"]);?>
+                         [list_products_scrollable($data['bestseller']  = bestseller()),list_products_scrollable($data['bestseller']  = bestseller()),list_products_scrollable($data['bestseller']  = bestseller())])?>
 
 <!-- Best seller -->
 <?php showScrollableList("https://cdn0.fahasa.com/media/wysiwyg/icon-menu/ico-dochoi_1.png", 
@@ -439,8 +390,7 @@ $data['category'] = [
 <!-- list products 8-->
 <?php  showScrollableList_WithoutHeader(["Đèn bàn", "Bình nước", "Pin"], 
                                          'tools', 
-                                         ["_listproducts2.php","_listproducts2.php",
-                                         "_listproducts2.php"]) ?>
+                                         [list_products_scrollable($data['bestseller']  = bestseller()),list_products_scrollable($data['bestseller']  = bestseller()),list_products_scrollable($data['bestseller']  = bestseller())]) ?>
 
 <!-- hot list products 2-->
 <div class="container px-0 pb-3 mt-4 rounded position-relative" style="width: 1230px; background-color:white;">

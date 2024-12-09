@@ -1,86 +1,8 @@
 <?php
-$data['bestseller'] = [
-    0 => [
-        'title' => 'Xứ Sở Miên Man - Bản Đặc Biệt - Tặng Kèm 1 Bookmark + 2',
-        'price' => '238.000đ',
-        'thumbnail' => 'https://placehold.co/400',
-        'discount' => '0',
-        'quantity' => '200',
-        'sold' => '10',
-    ],
-    1 => [
-        'title' => 'Nexus - A Brief History Of Information Networks From The',
-        'price' => '509.000đ',
-        'thumbnail' => 'https://placehold.co/400',
-        'discount' => '15',
-        'quantity' => '200',
-        'sold' => '50',
-    ],
-    2 => [
-        'title' => 'Máy Tính Casio FX-880BTG - Màu Đen + Bút Frixion Colors và G2 (Bút Giao Ngẫu Nhiên)',
-        'price' => '238.000đ',
-        'thumbnail' => 'https://placehold.co/400',
-        'discount' => '5',
-        'quantity' => '200',
-        'sold' => '100',
-    ],
-    3 => [
-        'title' => 'Electronics',
-        'price' => '238.000đ',
-        'thumbnail' => 'https://placehold.co/400',
-        'discount' => '2',
-        'quantity' => '400',
-        'sold' => '399',
-    ],
-    4 => [
-        'title' => 'Electronics',
-        'price' => '238.000đ',
-        'thumbnail' => 'https://placehold.co/400',
-        'discount' => '0',
-        'quantity' => '200',
-        'sold' => '200',
-    ],
-    5 => [
-        'title' => 'Electronics',
-        'price' => '238.000đ',
-        'thumbnail' => 'https://placehold.co/400',
-        'discount' => '10',
-        'quantity' => '200',
-        'sold' => '120',
-    ],
-    6 => [
-        'title' => 'Electronics',
-        'price' => '238.000đ',
-        'thumbnail' => 'https://placehold.co/400',
-        'discount' => '0',
-        'quantity' => '200',
-        'sold' => '120',
-    ],
-    7 => [
-        'title' => 'Electronics',
-        'price' => '238.000đ',
-        'thumbnail' => 'https://placehold.co/400',
-        'discount' => '30',
-        'quantity' => '200',
-        'sold' => '200',
-    ],
-    8 => [
-        'title' => 'Electronic',
-        'price' => '238.000đ',
-        'thumbnail' => 'https://placehold.co/400',
-        'discount' => '0',
-        'quantity' => '200',
-        'sold' => '22',
-    ],
-    9 => [
-        'title' => 'Electronics',
-        'price' => '238.000đ',
-        'thumbnail' => 'https://placehold.co/400',
-        'discount' => '10',
-        'quantity' => '200',
-        'sold' => '109',
-    ],
-];
+include_once '_button.php';
+
+$data['bestseller'] = bestseller();
+
 
 foreach ($data['bestseller'] as $key => $value) {
     if ($value['discount'] != '0') {
@@ -118,32 +40,13 @@ foreach ($data['bestseller'] as $key => $value) {
                         </p>
                     <?php endif; ?>
                 </div>
-                <div class="d-flex justify-content-center mt-3 ">
-                    <div class="sold-progress">
-                        <?php
-                        $quantity = $value['quantity'];
-                        $sold = $value['sold'];
-                        $percent = ($sold / $quantity) * 100;
-                        ?>
-                        <div class="progress-bar" style="width: <?php echo $percent; ?>%;"></div>
-                        <span>
-                            <?php 
-                            if ($percent >= 100) {
-                                echo "Hết hàng";
-                            } elseif ($percent >= 85) {
-                                echo "Sắp hết";
-                            } else {
-                                echo "Đã bán $sold";
-                            }
-                            ?>
-                        </span>
-                    </div>
-                </div>
+                <?php include '_bar.php'?>
+
             </div>
         </a>
     <?php endforeach; ?>
 </div>
-<?php include '_button_showmore.php'?>
+<?php custom_btn('Xem Thêm', 'abc')?>
 
 <script>
 function applyCardHoverEffect(selector) {

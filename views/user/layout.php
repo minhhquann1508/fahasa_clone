@@ -1,4 +1,5 @@
 <?php include_once './utils/libs.php'?>
+<?php include_once '_data_handler.php'?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +9,6 @@
     <link rel="stylesheet" href="./css/user.css">
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/product_list.css">
-    <link rel="stylesheet" href="./css/_button_showmore.css">
     <link rel="stylesheet" href="./css/_sold_progress.css">
 
     <!-- Fontawesome -->
