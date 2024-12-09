@@ -1,31 +1,4 @@
 <?php
-$data['category'] = [
-    1 => [
-        'name' => 'Electronics',
-        'thumbnail' => 'https://example.com/images/electronics.jpg',
-        'slug' => 'electronics',
-    ],
-    2 => [
-        'name' => 'Books',
-        'thumbnail' => 'https://example.com/images/books.jpg',
-        'slug' => 'books',
-    ],
-    3 => [
-        'name' => 'Clothing',
-        'thumbnail' => 'https://example.com/images/clothing.jpg',
-        'slug' => 'clothing',
-    ],
-    4 => [
-        'name' => 'Furniture',
-        'thumbnail' => 'https://example.com/images/furniture.jpg',
-        'slug' => 'furniture',
-    ],
-    5 => [
-        'name' => 'Toys',
-        'thumbnail' => 'https://example.com/images/toys.jpg',
-        'slug' => 'toys',
-    ],
-];
 ?>
 
 <div>

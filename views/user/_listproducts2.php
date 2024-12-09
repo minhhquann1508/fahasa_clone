@@ -1,86 +1,8 @@
 <?php
-$data['list_products'] = [
-    1 => [
-        'title' => 'Xứ Sở Miên Man - Bản Đặc Biệt - Tặng Kèm 1 Bookmark + 2',
-        'price' => '238.000đ',
-        'thumbnail' => 'https://placehold.co/400',
-        'discount' => '0',
-        'quantity' => '200',
-        'sold' => '10',
-    ],
-    2 => [
-        'title' => 'Nexus - A Brief History Of Information Networks From The',
-        'price' => '509.000đ',
-        'thumbnail' => 'https://placehold.co/400',
-        'discount' => '15',
-        'quantity' => '200',
-        'sold' => '50',
-    ],
-    3 => [
-        'title' => 'Máy Tính Casio FX-880BTG - Màu Đen + Bút Frixion Colors và G2 (Bút Giao Ngẫu Nhiên)',
-        'price' => '238.000đ',
-        'thumbnail' => 'https://placehold.co/400',
-        'discount' => '5',
-        'quantity' => '200',
-        'sold' => '100',
-    ],
-    4 => [
-        'title' => 'Electronics',
-        'price' => '238.000đ',
-        'thumbnail' => 'https://placehold.co/400',
-        'discount' => '2',
-        'quantity' => '400',
-        'sold' => '399',
-    ],
-    5 => [
-        'title' => 'Electronics',
-        'price' => '238.000đ',
-        'thumbnail' => 'https://placehold.co/400',
-        'discount' => '0',
-        'quantity' => '200',
-        'sold' => '200',
-    ],
-    6 => [
-        'title' => 'Electronics',
-        'price' => '238.000đ',
-        'thumbnail' => 'https://placehold.co/400',
-        'discount' => '10',
-        'quantity' => '200',
-        'sold' => '120',
-    ],
-    7 => [
-        'title' => 'Electronics',
-        'price' => '238.000đ',
-        'thumbnail' => 'https://placehold.co/400',
-        'discount' => '0',
-        'quantity' => '200',
-        'sold' => '120',
-    ],
-    8 => [
-        'title' => 'Electronics',
-        'price' => '238.000đ',
-        'thumbnail' => 'https://placehold.co/400',
-        'discount' => '30',
-        'quantity' => '200',
-        'sold' => '100',
-    ],
-    9 => [
-        'title' => 'Electronics',
-        'price' => '238.000đ',
-        'thumbnail' => 'https://placehold.co/400',
-        'discount' => '0',
-        'quantity' => '200',
-        'sold' => '2',
-    ],
-    10 => [
-        'title' => 'Electronics',
-        'price' => '238.000đ',
-        'thumbnail' => 'https://placehold.co/400',
-        'discount' => '10',
-        'quantity' => '200',
-        'sold' => '29',
-    ],
-];
+include_once '_button.php';
+
+$data['bestseller'] = bestseller();
+$data['list_products'] = list_products();
 
 foreach ($data['list_products'] as $key => $value) {
     if ($value['discount'] != '0') {
@@ -122,7 +44,7 @@ foreach ($data['list_products'] as $key => $value) {
                         </div>
 
                         <!-- sold progress  -->
-                        <?php include '_sold_progress.php'?>
+                        <?php include '_bar.php'?>
                     </a>
                 </div>
             <?php endforeach; ?>
@@ -133,7 +55,7 @@ foreach ($data['list_products'] as $key => $value) {
 </div>
 
 <!-- showmore btn -->
-<?php include '_button_showmore.php'?>
+<?php custom_btn('Xem Thêm', 'abc')?>
 
 <style>
     .nav-tabs .nav-link {
