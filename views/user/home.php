@@ -128,7 +128,7 @@
                                     "Xu Hướng Mua Sắm", 
                                     ["Xu Hướng Theo Ngày", "Sách HOT - Giảm Sốc", "Bestseller Ngoại Văn"], 
                                     "bestsellers", 
-                                    ["_listproducts1.php","_listproducts1.php","_listproducts1.php"]);?>
+                                    [list_products_unscrollable($data['bestseller']  = bestseller()),"_listproducts1.php","_listproducts1.php"]);?>
 
 <!-- list products 1 -->
 <?php  showScrollableList_WithoutHeader(["Lịch Bàn 2025"], 
@@ -384,7 +384,7 @@
                          "Đồ chơi", 
                          ["Mô hình nhân vật", "Robot - Siêu nhân", "Đồ Chơi Lắp Ráp"], 
                          "Toys", 
-                         ["_listproducts1.php","_listproducts1.php","_listproducts1.php","_listproducts1.php"]);?>
+                         [list_products_unscrollable($data['bestseller']  = bestseller()),"_listproducts1.php","_listproducts1.php","_listproducts1.php"]);?>
 
 
 <!-- list products 8-->

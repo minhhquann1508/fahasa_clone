@@ -20,7 +20,7 @@
                             <img src="./img/menu_red.svg" style="color: var(--greyD);">
                             <span><i class="fa-solid fa-angle-down"></i></span>
                             <ul class="dropdown-menu container pt-4 px-3 pb-3" aria-labelledby="dropdownMenuButton"
-                                style="width: 1230px;">
+                                style="width: 1230px;z-index:100000">
                                 <div class="row">
                                     <div class="col-3" style="border-right: 1px solid #ccc;">
                                         <p class="fs-4">Danh mục sản phẩm</p>
@@ -46,7 +46,7 @@
                             <button
                                 class="btn btn-outline-secondary position-absolute d-flex justify-content-center rounded"
                                 type="button"
-                                style="width: 72px;height: 30px;background: var(--primary);color: white;right: 2px;top: -15px;">
+                                style="width: 72px;height: 30px;background: var(--primary);color: white;right: 2px;top: -15px;border:none">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                             </button>
                         </div>

@@ -1,4 +1,9 @@
+<?php include_once './views/user/_list.php';?>
+<?php include_once './views/user/_listproduct.php';?>
+
 <?php
+    
+
     $data['product_detail'] = [
         0 => [
             'title' => 'OVERLORD',
@@ -357,48 +362,23 @@
 </div>
 
 
+<!-- list products 1-->
+<?php showScrollableList("https://cdn0.fahasa.com/media/wysiwyg/icon-menu/icon_dealhot_new.png", 
+                         "Sản phẩm liên quan", 
+                         ["Series bộ", "Bitex", "First News", "Hương Trang"], 
+                         "highlighted-brands", 
+                         [list_products_scrollable($data['bestseller']  = bestseller()),list_products_scrollable($data['bestseller']  = bestseller()),
+                          list_products_scrollable($data['bestseller']  = bestseller()),list_products_scrollable($data['list_products']  = list_products())]) ?>
 
-<!-- list products -->
-<div class="container px-0 mt-4 rounded" style="width: 1230px;background-color:white">
-    <div class="">
-        <div class="px-3">
-            <p class="fw-bold py-3" style="font-size: 17px;text-transform: uppercase;">Sản phẩm liên quan</p>
-            <div class="card-header border-bottom">
-                <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
-                    <li class="nav-item">
-                        <button class="nav-link active pt-3 pb-2" id="login-tab" data-bs-toggle="tab" data-bs-target="#calendar"
-                            type="button" role="tab" aria-selected="true">Series bộ</button>
-                    </li>
-                </ul>
-            </div>
-            <div class="card-body ">
-                <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="calendar" role="tabpanel" aria-labelledby="login-tab">
-                        <?php include '_listproducts2.php'?>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
-<!-- list products -->
-<div class="container px-0 mt-4 rounded" style="width: 1230px;background-color:white">
-    <div class="">
-        <div class="px-3">
-            <div class="card-header border-bottom">
-            <p class="fw-bold py-3" style="font-size: 17px;text-transform: uppercase;">Fahasa Giới Thiệu</p>
-            </div>
-            <div class="card-body ">
-                <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="calendar" role="tabpanel" aria-labelledby="login-tab">
-                        <?php include '_listproducts2.php'?>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<!-- list products 2-->
+<?php showScrollableList("https://cdn0.fahasa.com/media/wysiwyg/icon-menu/ico-dochoi_1.png", 
+                         "Fahasa Giới Thiệu", 
+                         ["Series bộ", "Bitex", "First News", "Hương Trang"], 
+                         "highlighted-brands", 
+                         [list_products_scrollable($data['bestseller']  = bestseller()),list_products_scrollable($data['bestseller']  = bestseller()),
+                          list_products_scrollable($data['bestseller']  = bestseller()),list_products_scrollable($data['list_products']  = list_products())]) ?>
+
 
 <div style="height:50px"></div>
 
