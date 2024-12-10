@@ -8,8 +8,7 @@
         $id = $_GET['id'];
     } 
     $data['product_detail'] = Database::get_by_cond("SELECT *, p.id as p_id , p.slug as p_slug ,t.name as t_name, c.name as c_name FROM product p JOIN type t ON p.type_id = t.id JOIN category c ON p.category_id = c.id WHERE p.id = $id");
-    print_r($data['product_detail']);
-
+    
     $data['manga_bestseller'] = Database::get_by_cond('SELECT * FROM product WHERE is_hot = 1 ORDER BY id ASC LIMIT 10');
     
     $data['product_detaill'] = [

@@ -154,31 +154,31 @@
         <img src="https://cdn0.fahasa.com/media/fahasa_web_image/noel_event_image/satan_noel.svg" alt="" width="24px">
         <p class="fw-bold" style="font-size: 17px;text-transform: uppercase;">merry christmas</p>
     </div>
-    <div class="d-flex justify-content-between gap-3">
+    <div class="d-flex gap-3">
         <div class="p-2">
-            <img  src="https://placehold.co/600x400" width="750px">
+            <img class="img-fluid" src="https://placehold.co/600x400" width="750px">
         </div>
-        <div class="w-100">
+        <div class="" >
             <p class="mt-2 fw-bold" style="font-size: 14px;">Trang trí Giáng Sinh</p>
-            <div class="d-flex justify-content-between mt-2">
+            <div class="d-flex justify-content-between mt-2 chrismas_container_product" style="width: 420px;">
                 <div class="px-2" style="background: #f2f4f5;">
-                    <img class="rounded mt-2" src="https://placehold.co/400" alt="" width="80px">
+                    <img class="rounded mt-2" src="https://placehold.co/400" alt="" width="100%">
                     <p class="mt-2 mb-4 text-center" style="font-size: 12px">Cây thông</p>
                 </div>
                 <div class="px-2" style="background: #f2f4f5;">
-                    <img class="rounded mt-2" src="https://placehold.co/400" alt="" width="80px">
+                    <img class="rounded mt-2" src="https://placehold.co/400" alt="" width="100%">
                     <p class="mt-2 mb-4 text-center" style="font-size: 12px">Cây thông</p>
                 </div>
                 <div class="px-2" style="background: #f2f4f5;">
-                    <img class="rounded mt-2" src="https://placehold.co/400" alt="" width="80px">
+                    <img class="rounded mt-2" src="https://placehold.co/400" alt="" width="100%">
                     <p class="mt-2 mb-4 text-center" style="font-size: 12px">Cây thông</p>
                 </div>
                 <div class="px-2" style="background: #f2f4f5;">
-                    <img class="rounded mt-2" src="https://placehold.co/400" alt="" width="80px">
+                    <img class="rounded mt-2" src="https://placehold.co/400" alt="" width="100%">
                     <p class="mt-2 mb-4 text-center" style="font-size: 12px">Cây thông</p>
                 </div>
             </div>
-            <div class="mt-3" style="overflow: auto; height:310px">
+            <div class="mt-3 chrismas_container_product" style="overflow: auto; height:310px ">
                 <div class="">
                     <img class="w-100" src="https://placehold.co/400x100" alt="" height="100px">
                 </div>
@@ -446,6 +446,11 @@
         display: grid;
         grid-template-columns: repeat(5, 1fr); 
         gap: 10px; 
+    }
+    @media only screen and (max-width: 1300px) {
+        .chrismas_container_product {
+            max-width: 350px;
+        }
     }
 
 </style>
