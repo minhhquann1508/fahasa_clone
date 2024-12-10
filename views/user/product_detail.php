@@ -1,5 +1,6 @@
 <?php include_once './views/user/_list.php';?>
 <?php include_once './views/user/_listproduct.php';?>
+<?php include_once './views/user/_comment.php';?>
 <?php include_once './models/Product.php';?>
 
 <?php
@@ -38,37 +39,37 @@
         0 => [
             'rating' => '4',
             'content' => 'abc',
-            'created_at' => '',
+            'created_at' => '18/09/2023',
             'user_id' => '',
         ],
         1 => [
             'rating' => '2',
             'content' => 'bcd',
-            'created_at' => '',
+            'created_at' => '18/12/2014',
             'user_id' => '',
         ],
         2 => [
             'rating' => '2',
             'content' => 'dce',
-            'created_at' => '',
+            'created_at' => '13/09/2021',
             'user_id' => '',
         ],
         3 => [
             'rating' => '5',
             'content' => 'omn',
-            'created_at' => '',
+            'created_at' => '28/09/2020',
             'user_id' => '',
         ],
         4 => [
             'rating' => '2',
             'content' => 'omn',
-            'created_at' => '',
+            'created_at' => '18/10/2020',
             'user_id' => '',
         ],
         5 => [
             'rating' => '1',
             'content' => 'omn',
-            'created_at' => '',
+            'created_at' => '18/11/2020',
             'user_id' => '',
         ],
     ];
@@ -397,10 +398,11 @@
             </a>
         </div>
         </div>
-
-<?php  comment_list(["Newest", "Best",], 
-                                         'comments', 
-                                         []) ?>
+            <div>
+               <?php comment_list(["Newest", "Best",], 
+                                   'comments', 
+                                        [comment($data['comment'])]) ?>
+            </div>
     </div>
 </div>
 
