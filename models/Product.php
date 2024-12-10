@@ -38,6 +38,14 @@
 
         // ---------------------------------------------------------------QUOC---------------------------------------------------------------
 
+        public static function get_product_by_cond($cond) {
+            $conn = Database::get_connection();
+            $sql = "SELECT * FROM product " . $cond;
+            $stmt = $conn->prepare($sql);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+        
         public static function get_product_by_sql($column_name, $comparison, $value, $order_by, $limit) {
             $conn = Database::get_connection();
         

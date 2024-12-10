@@ -7,8 +7,10 @@
 <!-- datahandlers -->
 <?php
     $data['conan'] = Product::get_product_by_sql('slug', 'like',  '%conan%', 'asc', 10);
-    $data['manga_bestseller'] = Product::get_product_by_sql('is_hot', '=',  '1', 'asc', 20);
 
+    $data['conan2'] = Product::get_product_by_cond('WHERE is_hot = 1 ORDER BY id ASC LIMIT 10');
+
+    $data['manga_bestseller'] = Product::get_product_by_cond('WHERE is_hot = 1 ORDER BY id ASC LIMIT 10');
     $data['manga_bestseller1'] = array_slice($data['manga_bestseller'], 0, 10);
     $data['manga_bestseller2'] = array_slice($data['manga_bestseller'], 10, 10);
 ?>
