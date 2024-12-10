@@ -2,7 +2,7 @@
     <div class="sold-progress">
         <?php
             $quantity = $value['quantity'];
-            $sold = $value['sold'];
+            $sold = $value['solds'];
             $percent = ($sold / $quantity) * 100;
         ?>
         <div class="progress-bar" style="width: <?php echo $percent; ?>%;"></div>

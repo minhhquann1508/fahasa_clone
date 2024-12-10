@@ -1,5 +1,4 @@
-<?php
-?>
+<?php $data['category'] = category(); ?>
 
 <div>
     <div style="background-color: var(--secondary);" class="d-flex justify-content-center">
@@ -11,7 +10,9 @@
         <div class="container p-0" style="width:1230px;">
             <div class="d-flex align-items-center justify-content-between" style="height: 68px;">
                 <div>
-                    <img src="./img/logo.webp" style="width:220px; vertical-align: middle;">
+                    <a href="<?php echo home?>">
+                        <img src="./img/logo.webp" style="width:220px; vertical-align: middle;">
+                    </a>
                 </div>
                 <div class="d-flex gap-3">
                     <div class="d-flex align-items-center gap-2 position-relative" style="height: 68px;">
@@ -19,7 +20,7 @@
                             <img src="./img/menu_red.svg" style="color: var(--greyD);">
                             <span><i class="fa-solid fa-angle-down"></i></span>
                             <ul class="dropdown-menu container pt-4 px-3 pb-3" aria-labelledby="dropdownMenuButton"
-                                style="width: 1230px;">
+                                style="width: 1230px;z-index:100000">
                                 <div class="row">
                                     <div class="col-3" style="border-right: 1px solid #ccc;">
                                         <p class="fs-4">Danh mục sản phẩm</p>
@@ -45,7 +46,7 @@
                             <button
                                 class="btn btn-outline-secondary position-absolute d-flex justify-content-center rounded"
                                 type="button"
-                                style="width: 72px;height: 30px;background: var(--primary);color: white;right: 2px;top: -15px;">
+                                style="width: 72px;height: 30px;background: var(--primary);color: white;right: 2px;top: -15px;border:none">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                             </button>
                         </div>
