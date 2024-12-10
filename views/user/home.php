@@ -2,7 +2,19 @@
 
 <?php include_once './views/user/_list.php';?>
 <?php include_once './views/user/_listproduct.php';?>
+<?php include_once './models/Product.php';?>
 
+<!-- datahandlers -->
+<?php
+    $data['conan'] = Product::get_product_by_sql('slug', 'like',  '%conan%', 'asc', 10);
+    $data['manga_bestseller'] = Product::get_product_by_sql('is_hot', '=',  '1', 'asc', 20);
+
+    $data['manga_bestseller1'] = array_slice($data['manga_bestseller'], 0, 10);
+    $data['manga_bestseller2'] = array_slice($data['manga_bestseller'], 10, 10);
+?>
+
+
+<!-- ads -->
 <div class="container pb-2 p-0" style="width: 1230px">
     <?php include_once '_carousel.php' ?>
     <div class="rounded mt-4 " style="background:var(--white)" >
@@ -128,7 +140,7 @@
                                     "Xu Hướng Mua Sắm", 
                                     ["Xu Hướng Theo Ngày", "Sách HOT - Giảm Sốc", "Bestseller Ngoại Văn"], 
                                     "bestsellers", 
-                                    [list_products_unscrollable($data['bestseller']  = bestseller()),"_listproducts1.php","_listproducts1.php"]);?>
+                                    [list_products_unscrollable($data['manga_bestseller1']),list_products_unscrollable($data['manga_bestseller2']),"_listproducts1.php"]);?>
 
 <!-- list products 1 -->
 <?php  showScrollableList_WithoutHeader(["Lịch Bàn 2025"], 

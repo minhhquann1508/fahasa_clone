@@ -1,15 +1,20 @@
 <?php
 
 function list_products_scrollable($data_added) {
+    foreach ($data_added as $key => $value) {
+        if (empty($data_added[$key]['thumbnail'])) {
+            $data_added[$key]['thumbnail'] = 'https://placehold.co/400';
+        }
+    }
     include_once '_button.php';
     foreach ($data_added as $key => $value) {
         ob_start(); // Bắt đầu buffer
         if ($value['discount'] != '0') {
-            $originalPrice = intval(str_replace('.', '', explode('đ', $value['price'])[0]));
+            $originalPrice = intval($value['price']);
             $discount = intval($value['discount']);
-            $data_added[$key]['final_price'] = number_format($originalPrice - ($originalPrice * $discount / 100), 0, '.', '.') . 'đ';
+            $data_added[$key]['final_price'] = number_format($originalPrice - ($originalPrice * $discount / 100), 0, '.', '.');
         } else {
-            $data_added[$key]['final_price'] = $value['price'];
+            $data_added[$key]['final_price'] = number_format(floatval($value['price']), 0, '.', '.');
         }
     }
     ?>
@@ -39,7 +44,7 @@ function list_products_scrollable($data_added) {
                                 </div>
                                 <?php if ($value['discount'] != '0') : ?>
                                     <p class="product-price" style="color: #888888; font-size: 14px; text-decoration: line-through;">
-                                        <?php echo $value['price']; ?>
+                                        <?php echo number_format(floatval($value['price']) , 0, '.', '.') . 'đ';?>
                                     </p>
                                 <?php endif; ?>
                             </div>
@@ -94,15 +99,20 @@ function list_products_scrollable($data_added) {
 
 <?php
 function list_products_unscrollable($data_added) {
+    foreach ($data_added as $key => $value) {
+        if (empty($data_added[$key]['thumbnail'])) {
+            $data_added[$key]['thumbnail'] = 'https://placehold.co/400';
+        }
+    }
     include_once '_button.php';
     foreach ($data_added as $key => $value) {
         ob_start(); 
         if ($value['discount'] != '0') {
-            $originalPrice = intval(str_replace('.', '', explode('đ', $value['price'])[0]));
+            $originalPrice = intval($value['price']);
             $discount = intval($value['discount']);
-            $data_added[$key]['final_price'] = number_format($originalPrice - ($originalPrice * $discount / 100), 0, '.', '.') . 'đ';
+            $data_added[$key]['final_price'] = number_format($originalPrice - ($originalPrice * $discount / 100), 0, '.', '.');
         } else {
-            $data_added[$key]['final_price'] = $value['price'];
+            $data_added[$key]['final_price'] = number_format(floatval($value['price']), 0, '.', '.');
         }
     }
 ?>
@@ -117,7 +127,7 @@ function list_products_unscrollable($data_added) {
                     <p title="<?php echo $value['title'];?>" class="product-title mt-2 text-m" style="height: 40px;overflow:hidden;"><?php echo $value['title']; ?></p>
                     <div class="d-flex gap-3 align-items-center">
                         <p class="product-price fw-bold mt-3" style="color: var(--primary);font-size:16px">
-                            <?php echo $value['final_price']; ?>
+                            <?php echo $value['final_price']; ?>đ
                         </p>
                         <?php if ($value['discount'] != '0') : ?>
                             <p class="mt-3 fw-bold rounded" style="color: white; font-size: 13px; background: var(--primary); padding: 2px 4px;">
@@ -127,7 +137,7 @@ function list_products_unscrollable($data_added) {
                     </div>
                     <?php if ($value['discount'] != '0') : ?>
                         <p class="product-price" style="color: #888888;font-size:14px;text-decoration: line-through;">
-                            <?php echo $value['price']; ?>
+                            <?php echo number_format(floatval($value['price']) , 0, '.', '.') . 'đ';?>
                         </p>
                     <?php endif; ?>
                 </div>
