@@ -23,20 +23,25 @@ function list_products_scrollable($data_added) {
         <div class="product-scroll-container scroll-container">
             <div class="row flex-nowrap gap-2 px-2">
                 <?php foreach ($data_added as $value) : ?>
-                    <div class="card-model px-3" style="pointer-events: none; user-select: none; height: 380px; width: 235px;">
-                        <a href="">
-                            <div>
-                                <img src="<?php echo $value['thumbnail']; ?>" alt="<?php echo $value['title']; ?>" class="product-image">
+                    <div class="card-model px-3" style="height: 380px; width: 235px;">
+                        <a href="?page=detail&id=<?php echo $value['id']?>">
+                            <div  style="pointer-events: none; user-select: none;">
+                                <img src="<?php echo $value['thumbnail']; ?>" alt="<?php echo $value['title']; ?>" class="product-image" style="pointer-events: none; user-select: none;">
                             </div>
-                            <div style="height: 110px;">
-                                <p title="<?php echo $value['title']; ?>" class="product-title mt-2 text-m" style="height: 40px; overflow: hidden;">
-                                    <?php echo $value['title']; ?>
-                                </p>
-                                <div class="d-flex gap-3 align-items-center">
-                                    <p class="product-price fw-bold mt-3" style="color: var(--primary); font-size: 16px;">
-                                        <?php echo $value['final_price']; ?>
+                        </a>
+                            <div style="height: 110px">
+                                <a href="?page=detail&id=<?php echo $value['id']?>">
+                                    <p title="<?php echo $value['title']; ?>" class="product-title mt-2 text-m" style="height: 40px; overflow: hidden;" >
+                                        <?php echo $value['title']; ?>
                                     </p>
-                                    <?php if ($value['discount'] != '0') : ?>
+                                </a>
+                                <div class="d-flex gap-3 align-items-center" >
+                                    <a href="?page=detail&id=<?php echo $value['id']?>">
+                                        <p class="product-price fw-bold mt-3" style="color: var(--primary); font-size: 16px;">
+                                            <?php echo $value['final_price']; ?>đ
+                                        </p>
+                                    </a>
+                                <?php if ($value['discount'] != '0') : ?>
                                         <p class="mt-3 fw-bold rounded" style="color: white; font-size: 13px; background: var(--primary); padding: 2px 4px;">
                                             -<?php echo $value['discount']; ?>%
                                         </p>
@@ -50,7 +55,6 @@ function list_products_scrollable($data_added) {
                             </div>
                         <!-- sold progress  -->
                         <?php include '_bar.php'?>
-                        </a>
                     </div>
                 <?php endforeach; ?>
             </div>
@@ -118,7 +122,7 @@ function list_products_unscrollable($data_added) {
 ?>
     <div class="grid-container pb-4 mt-2 ">
     <?php foreach ($data_added as $key => $value) : ?>
-        <a href="">
+        <a href="?page=detail&id=<?php echo $value['id']?>">
             <div class="card-model p-2" style="height: 380px;">
                 <div class="px-2">
                     <img src="<?php echo $value['thumbnail']; ?>" alt="<?php echo $value['title']; ?>" class="product-image">
@@ -191,3 +195,5 @@ applyCardHoverEffect('.card-model');
 <?php 
     return ob_get_clean();
 } ?>
+
+

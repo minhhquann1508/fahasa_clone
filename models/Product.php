@@ -88,7 +88,7 @@
 
         public static function get_product_by_cond($cond) {
             $conn = Database::get_connection();
-            $sql = "SELECT * FROM product " . $cond;
+            $sql = "SELECT * FROM product p" . $cond;
             $stmt = $conn->prepare($sql);
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_ASSOC);

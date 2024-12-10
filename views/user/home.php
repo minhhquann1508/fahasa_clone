@@ -6,13 +6,12 @@
 
 <!-- datahandlers -->
 <?php
-    $data['conan'] = Product::get_product_by_sql('slug', 'like',  '%conan%', 'asc', 10);
-
-    $data['conan2'] = Product::get_product_by_cond('WHERE is_hot = 1 ORDER BY id ASC LIMIT 10');
-
-    $data['manga_bestseller'] = Product::get_product_by_cond('WHERE is_hot = 1 ORDER BY id ASC LIMIT 10');
+    $data['conan'] = Database::get_by_cond("SELECT * FROM product WHERE slug like '%conan%' ORDER BY id asc LIMIT 10");
+    $data['conan2'] = Database::get_by_cond('SELECT * FROM product WHERE is_hot = 1 ORDER BY id ASC LIMIT 10');
+    $data['manga_bestseller'] = Database::get_by_cond('SELECT * FROM product WHERE is_hot = 1 ORDER BY id ASC LIMIT 20');
+    
     $data['manga_bestseller1'] = array_slice($data['manga_bestseller'], 0, 10);
-    $data['manga_bestseller2'] = array_slice($data['manga_bestseller'], 10, 10);
+    $data['manga_bestseller2'] = array_slice($data['manga_bestseller'], 10, 20);
 ?>
 
 
@@ -142,12 +141,12 @@
                                     "Xu Hướng Mua Sắm", 
                                     ["Xu Hướng Theo Ngày", "Sách HOT - Giảm Sốc", "Bestseller Ngoại Văn"], 
                                     "bestsellers", 
-                                    [list_products_unscrollable($data['manga_bestseller1']),list_products_unscrollable($data['manga_bestseller2']),"_listproducts1.php"]);?>
+                                    [list_products_unscrollable($data['manga_bestseller1']),list_products_unscrollable($data['manga_bestseller2']),list_products_unscrollable($data['manga_bestseller2'])]);?>
 
 <!-- list products 1 -->
 <?php  showScrollableList_WithoutHeader(["Lịch Bàn 2025"], 
                                          'calendars', 
-                                         [list_products_scrollable($data['bestseller']  = bestseller())]) ?>
+                                         [list_products_scrollable($data['manga_bestseller2'])]) ?>
 
 <!-- Merry Chrismas -->
 <div class="container pb-4 px-2 mt-3 rounded" style="width: 1230px;background-color:white">
@@ -260,22 +259,22 @@
                          "Thương hiệu nổi bật", 
                          ["Mcbooks", "Bitex", "First News", "Hương Trang"], 
                          "highlighted-brands", 
-                         [list_products_scrollable($data['bestseller']  = bestseller()),list_products_scrollable($data['bestseller']  = bestseller()),
-                          list_products_scrollable($data['bestseller']  = bestseller()),list_products_scrollable($data['list_products']  = list_products())]) ?>
+                         [list_products_scrollable($data['manga_bestseller1']),list_products_scrollable($data['manga_bestseller1']),
+                          list_products_scrollable($data['manga_bestseller1']),list_products_scrollable($data['manga_bestseller1'])]) ?>
 
 <!-- list products 3-->
 <?php  showScrollableList_WithoutHeader(["Tân Việt", "Thiên Long", "Deli", "Colormate"], 
                                          'ads', 
-                                         [list_products_scrollable($data['bestseller']  = bestseller()),list_products_scrollable($data['bestseller']  = bestseller()),
-                                          list_products_scrollable($data['bestseller']  = bestseller()),list_products_scrollable($data['list_products']  = list_products())]) ?>
+                                         [list_products_scrollable($data['manga_bestseller1']),list_products_scrollable($data['manga_bestseller1']),
+                                          list_products_scrollable($data['manga_bestseller1']),list_products_scrollable($data['manga_bestseller1'])]) ?>
 
 <!-- list products 4-->
 <?php showScrollableList("https://cdn0.fahasa.com/media/wysiwyg/Thang-11-2023/icon_new.png", 
                          "Combo trending", 
                          ["Combo kinh tế", "Combo Sách Học Ngoại Ngữ", "Combo Tâm Lý - Kỹ Năng Sống", "Combo Văn Học"], 
                          "combo-books", 
-                         [list_products_scrollable($data['bestseller']  = bestseller()),list_products_scrollable($data['bestseller']  = bestseller()),
-                         list_products_scrollable($data['bestseller']  = bestseller()),list_products_scrollable($data['bestseller']  = bestseller())]);?>
+                         [list_products_scrollable($data['manga_bestseller1']),list_products_scrollable($data['manga_bestseller1']),
+                         list_products_scrollable($data['manga_bestseller1']),list_products_scrollable($data['manga_bestseller1'])]);?>
 
 <!-- banner & bestproducts 2-->
 <div class="container mt-3 p-0" style="width: 1230px;">
@@ -326,14 +325,14 @@
                          "Foreign Books", 
                          ["Dictionaries & Languages", "Fiction", "Children's Books", "Other languages"], 
                          "foreign-books", 
-                         [list_products_scrollable($data['bestseller']  = bestseller()),list_products_scrollable($data['bestseller']  = bestseller()),
-                         list_products_scrollable($data['bestseller']  = bestseller()),list_products_scrollable($data['bestseller']  = bestseller())]);?>
+                         [list_products_scrollable($data['manga_bestseller1']),list_products_scrollable($data['manga_bestseller1']),
+                         list_products_scrollable($data['manga_bestseller1']),list_products_scrollable($data['manga_bestseller1'])]);?>
 
 <!-- Best seller 2 -->
 <?php  showScrollableList_WithoutHeader(["Truyện thiếu nhi", "Kiến thức - Kỹ Năng Sống Cho Trẻ", "Kiến Thức Bách Khoa", "Sách Âm Thanh"], 
                                          'random-books', 
-                                         [list_products_scrollable($data['bestseller']  = bestseller()),list_products_scrollable($data['bestseller']  = bestseller()),
-                                         list_products_scrollable($data['bestseller']  = bestseller()),list_products_scrollable($data['bestseller']  = bestseller())]) ?>
+                                         [list_products_scrollable($data['manga_bestseller1']),list_products_scrollable($data['manga_bestseller1']),
+                                         list_products_scrollable($data['manga_bestseller1']),list_products_scrollable($data['manga_bestseller1'])]) ?>
 
 <!-- banner & bestproducts 3-->
 <div class="container mt-3 p-0" style="width: 1230px;">
@@ -384,27 +383,27 @@
                          "Manga nổi bật", 
                          ["Manga Mới", "Light Novel Mới"], 
                          "manga-books", 
-                         [list_products_scrollable($data['bestseller']  = bestseller()),list_products_scrollable($data['bestseller']  = bestseller())]);?>
+                         [list_products_scrollable($data['manga_bestseller1']),list_products_scrollable($data['manga_bestseller1'])]);?>
 
 <!-- list products 7-->
 <?php showScrollableList("https://cdn0.fahasa.com/media/wysiwyg/icon-menu/Icon_SachThieuNhi_120x120.png", 
                          "Văn phòng phẩm nổi bật", 
                          ["Máy tính điện tử", "Màu Arcrylic","Bút - Viết"], 
                          "working-books", 
-                         [list_products_scrollable($data['bestseller']  = bestseller()),list_products_scrollable($data['bestseller']  = bestseller()),list_products_scrollable($data['bestseller']  = bestseller())])?>
+                         [list_products_scrollable($data['manga_bestseller1']),list_products_scrollable($data['manga_bestseller1']),list_products_scrollable($data['manga_bestseller1'])])?>
 
 <!-- Best seller -->
 <?php showScrollableList("https://cdn0.fahasa.com/media/wysiwyg/icon-menu/ico-dochoi_1.png", 
                          "Đồ chơi", 
                          ["Mô hình nhân vật", "Robot - Siêu nhân", "Đồ Chơi Lắp Ráp"], 
                          "Toys", 
-                         [list_products_unscrollable($data['bestseller']  = bestseller()),"_listproducts1.php","_listproducts1.php","_listproducts1.php"]);?>
+                         [list_products_unscrollable($data['manga_bestseller1']),"_listproducts1.php","_listproducts1.php","_listproducts1.php"]);?>
 
 
 <!-- list products 8-->
 <?php  showScrollableList_WithoutHeader(["Đèn bàn", "Bình nước", "Pin"], 
                                          'tools', 
-                                         [list_products_scrollable($data['bestseller']  = bestseller()),list_products_scrollable($data['bestseller']  = bestseller()),list_products_scrollable($data['bestseller']  = bestseller())]) ?>
+                                         [list_products_scrollable($data['manga_bestseller1']),list_products_scrollable($data['manga_bestseller_1']),list_products_scrollable($data['manga_bestseller1'])]) ?>
 
 <!-- hot list products 2-->
 <div class="container px-0 pb-3 mt-4 rounded position-relative" style="width: 1230px; background-color:white;">

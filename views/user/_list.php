@@ -154,4 +154,43 @@ function showBanner_Bestsellers($title, $mainImage, $subImages) {
 <?php
 }
 ?>
+    <!-- =========================================================================================================================================================================== -->
+
+<?php
+function comment_list($tabs, $id, $links) {
+?>
+        <div class="">
+            <div class="px-1">
+                <div class="card-header border-bottom">
+                    <ul class="nav nav-tabs card-header-tabs" id="tablist-<?php echo $id ?>" role="tablist">
+                        <?php foreach ($tabs as $index => $tab): ?>
+                            <li class="nav-item">
+                                <button class="nav-link <?php echo $index === 0 ? 'active' : ''; ?> pt-3 pb-2"
+                                    id="<?php echo $id . '-tab-' . $index ?>"
+                                    data-bs-toggle="tab"
+                                    data-bs-target="#<?php echo $id . '-content-' . $index ?>"
+                                    type="button"
+                                    role="tab"
+                                    aria-selected="<?php echo $index === 0 ? 'true' : 'false'; ?>">
+                                    <?php echo $tab ?>
+                                </button>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <div class="tab-content" id="tabcontent-<?php echo $id ?>">
+                        <?php foreach ($links as $index => $link): ?>
+                            <div class="tab-pane fade <?php echo $index === 0 ? 'show active' : ''; ?>"
+                                id="<?php echo $id . '-content-' . $index ?>"
+                                role="tabpanel">
+                                <?php echo $link; ?>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php } ?>
+
 

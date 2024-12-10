@@ -1,5 +1,3 @@
-// js này để dragable tất cả container có class = containerSelector
-
 document.addEventListener('DOMContentLoaded', () => {
     const initScroll = (containerSelector) => {
         const scrollContainers = document.querySelectorAll(containerSelector);
@@ -10,10 +8,12 @@ document.addEventListener('DOMContentLoaded', () => {
             
             let isDragging = false;
             let startX, scrollLeft;
+            let isMoved = false; // Kiểm tra người dùng có kéo hay không
 
             // Xử lý kéo cuộn bằng chuột
             scrollContainer.addEventListener('mousedown', (e) => {
                 isDragging = true;
+                isMoved = false; // Reset trạng thái khi bắt đầu kéo
                 startX = e.pageX - scrollContainer.offsetLeft;
                 scrollLeft = scrollContainer.scrollLeft;
                 scrollContainer.classList.add('active');
@@ -35,6 +35,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 const x = e.pageX - scrollContainer.offsetLeft;
                 const walk = (x - startX) * 2; // Tăng tốc độ cuộn
                 scrollContainer.scrollLeft = scrollLeft - walk;
+
+                // Đánh dấu rằng người dùng đã kéo
+                isMoved = true;
+            });
+
+            // Xử lý click vào sản phẩm
+            scrollContainer.addEventListener('click', (e) => {
+                if (isMoved) {
+                    e.preventDefault(); // Ngăn không cho link được kích hoạt nếu đã kéo
+                }
             });
 
             // Xử lý cuộn bằng nút

@@ -17,5 +17,13 @@
             }
             return self::$conn;
         }
+    
+        public static function get_by_cond($cond) {
+            $conn = Database::get_connection();
+            $sql = $cond;
+            $stmt = $conn->prepare($sql);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
     }
 ?>

@@ -1,10 +1,17 @@
 <?php include_once './views/user/_list.php';?>
 <?php include_once './views/user/_listproduct.php';?>
+<?php include_once './models/Product.php';?>
 
 <?php
-    
+    if(isset($_GET['id'])){
+        $id = $_GET['id'];
+    } 
+    $data['product_detail'] = Database::get_by_cond("SELECT *, p.id as p_id , p.slug as p_slug ,t.name as t_name, c.name as c_name FROM product p JOIN type t ON p.type_id = t.id JOIN category c ON p.category_id = c.id WHERE p.id = $id");
+    print_r($data['product_detail']);
 
-    $data['product_detail'] = [
+    $data['manga_bestseller'] = Database::get_by_cond('SELECT * FROM product WHERE is_hot = 1 ORDER BY id ASC LIMIT 10');
+    
+    $data['product_detaill'] = [
         0 => [
             'title' => 'OVERLORD',
             'price' => '238.000đ',
@@ -41,13 +48,25 @@
             'user_id' => '',
         ],
         2 => [
-            'rating' => '3',
+            'rating' => '2',
             'content' => 'dce',
             'created_at' => '',
             'user_id' => '',
         ],
         3 => [
             'rating' => '5',
+            'content' => 'omn',
+            'created_at' => '',
+            'user_id' => '',
+        ],
+        4 => [
+            'rating' => '2',
+            'content' => 'omn',
+            'created_at' => '',
+            'user_id' => '',
+        ],
+        5 => [
+            'rating' => '1',
             'content' => 'omn',
             'created_at' => '',
             'user_id' => '',
@@ -85,19 +104,19 @@
         }
     }
 ?>
-<!-- breadcrumb -->
 <div class="container p-0 mt-3" style="width: 1230px;">
-    <div class="breadcrumb d-flex align-items-center gap-2">
-        <span href="#" style="font-size:13px;color:#212121;text-transform: uppercase;">Sách Tiếng Việt</span>
-        <i class="fa-solid fa-angle-right" style="color:#ccc"></i>
-        <span href="#" style="font-size:13px;color:#212121;text-transform: uppercase;">Manga - Comic</span>
-        <i class="fa-solid fa-angle-right" style="color:#ccc"></i>
-        <span href="#" style="font-size:13px;color:#212121;text-transform: uppercase;"><?php echo $data['product_detail'][0]['type']?></span>
-    </div>
-<?php foreach ($data['product_detail'] as $key => $value): ?>
 
-    <!-- product imgs & cart -->
+    <!-- breadcrumb -->
+    <div class="breadcrumb d-flex align-items-center gap-2">
+        <span href="#" style="font-size:13px;color:#212121;text-transform: uppercase;"><?php echo $data['product_detail'][0]['t_name']?></span>
+        <i class="fa-solid fa-angle-right" style="color:#ccc"></i>
+        <span href="#" style="font-size:13px;color:#212121;text-transform: uppercase;"><?php echo $data['product_detail'][0]['c_name']?></span>
+        <i class="fa-solid fa-angle-right" style="color:#ccc"></i>
+        <span href="#" style="font-size:13px;color:#212121;text-transform: uppercase;"><?php echo $data['product_detail'][0]['title']?></span>
+    </div>
+    <?php foreach ($data['product_detail'] as $key => $value): ?>
     <div class="d-flex mt-3 gap-3">
+        <!-- product imgs & cart -->
         <div class="p-3 rounded position-sticky sticky-top" style="background:white;max-height:785px" >
             <img id="main-image" src="https://placehold.co/400" alt="Main Image" width="450px">
             <div class="thumbnail-container d-flex justify-content-between mt-3">
@@ -162,18 +181,17 @@
                 </div>
             </div>
         </div>
-
         <!-- info -->
         <div>
             <div class="rounded px-3 p-4" style="width:732px;background:white">
                 <div class="d-flex align-items-center gap-2">
                     <span style="color:#2489f4;padding:2px 8px;background:#E8F3FE;border-radius: 4px;font-size: 14px;font-weight: 700;margin-bottom:32px">Bộ</span>
-                    <p style="font-size: 23px;height:69px;overflow:hidden">[<?php echo $data['product_detail'][0]['type']?>] <?php echo $data['product_detail'][0]['title']?> - Tập 13</p>
+                    <p style="font-size: 23px;height:69px;overflow:hidden">[<?php echo $data['product_detail'][0]['t_name']?>] <?php echo $data['product_detail'][0]['title']?> - Tập 13</p>
                 </div>
                 <div class="row mt-2">
                     <div class="col-7">
-                        <p class="text-m">Nhà cung cấp: <a href="">IPM</a></p>
-                        <p class="text-m">Nhà xuất bản: <span class="fw-bold">NXB Hồng Đức</span></p>
+                        <p class="text-m">Nhà cung cấp: <a href=""><?php echo $data['product_detail'][0]['supplier_id']?></a></p>
+                        <p class="text-m">Nhà xuất bản: <span class="fw-bold"><?php echo $data['product_detail'][0]['translator']?></span></p>
                     </div>
                     <div class="col-5">
                         <p title="<?php echo $data['product_detail'][0]['author']?>" class="text-m" style="overflow: hidden;height:25px">Tác giả: <a class="fw-bold" href=""><?php echo $data['product_detail'][0]['author']?></a></p>
@@ -203,7 +221,7 @@
                     <p class="text-m" style="color:grey">Đã bán <span style="color:#212121"><?php echo $data['product_detail'][0]['solds']?></span></p>
                 </div>
                 <div class="d-flex align-items-center gap-2">
-                    <p class="fw-bold" style="color:#C92127;font-size:32px"><?php echo $value['final_price']?></p>
+                    <p class="fw-bold" style="color:#C92127;font-size:32px"><?php echo number_format(floatval($value['final_price']), 0, '.', '.')?>đ</p>
                     <?php if ($data['product_detail'][0]['discount'] != '0') : ?>
                         <p class="product-price" style="color: #888888;font-size:15px;text-decoration: line-through;">
                             <?php echo $data['product_detail'][0]['price'] ?>
@@ -267,13 +285,13 @@
                                 <div class="input-group border rounded">
                                     <span class="input-group-btn">
                                         <button type="button" class="quantity-left-minus btn btn-number"  data-type="minus" data-field="">
-                                            +
+                                            -
                                         </button>
                                     </span>
                                     <input style="border:none" type="text" id="quantity" name="quantity" class="form-control input-number" value="1" min="1" max="100">
                                     <span class="input-group-btn">
                                         <button type="button" class="quantity-right-plus btn btn-number" data-type="plus" data-field="">
-                                            -
+                                            +
                                         </button>
                                     </span>
                                 </div>
@@ -304,15 +322,15 @@
                                 <p>Sản phẩm bán chạy nhất</p>
                             </div>
                             <div class="d-flex flex-column text-m" style="width: 500px;">
-                                <p>8935250707442</p>
-                                <p>IPM</p>
-                                <p>Maruyama Kugane, Miyama Hugin, Oshio Satoshi</p>
-                                <p>NXB Hồng Đức</p>
-                                <p>2022</p>
+                                <p>89350707442<?php echo $data['product_detail'][0]['p_id']?></p>
+                                <p><?php echo $data['product_detail'][0]['supplier_id']?></p>
+                                <p><?php echo $data['product_detail'][0]['author']?></p>
+                                <p><?php echo $data['product_detail'][0]['translator']?></p>
+                                <p><?php echo date('Y' ,strtotime($data['product_detail'][0]['created_at']))?></p>
                                 <p>Tiếng Việt</p>
                                 <p>250</p>
                                 <p>18 x 13 cm</p>
-                                <p>194</p>
+                                <p><?php echo $data['product_detail'][0]['page_num']?></p>
                                 <p>Bìa Mềm</p>
                                 <p>Adventure</p>
                                 <p>ĐẠI HỘI MANGA</p>
@@ -337,27 +355,52 @@
 <!-- reviews && comments -->
 <div class="container px-3 pt-2 mt-3 rounded" style="width: 1230px;background-color:white">
     <p class="fw-bold" style="font-size: 18px;">Đánh giá sản phẩm</p>
-    <div class="rating-container">
-        <div class="rating-average">
-            <h1><?php echo $average_rating_rounded; ?>/5</h1>
-            <div class="stars">
-                <?php for ($i = 1; $i <= 5; $i++): ?>
-                    <?php echo $i <= floor($average_rating) ? '★' : '☆'; ?>
+    <div class="row">
+        <div class="col-5 d-flex">
+            <div class="rating-average text-center p-3">
+                <p class="text-center" style="font-size:38px;font-weight:600"><?php echo $average_rating_rounded; ?><span style="font-size:24px">/5</span></p>
+                <div class="stars" style="color: #F6A500; font-size: 18px;">
+                    <?php
+                        for ($i = 0; $i < $fullStars; $i++) {
+                            echo '<span style="color: #F6A500;font-size:20px">★</span>'; // Sao vàng
+                        }
+                        if ($halfStar) {
+                            echo '<span style="color: #F6A500;font-size:20px">☆</span>'; // Sao nửa
+                        }
+                        for ($i = 0; $i < $emptyStars; $i++) {
+                            echo '<span style="color: #f2f4f5;font-size:20px">★</span>'; // Sao xám
+                        }
+                    ?>
+                </div>
+                <p class="text-m" style="color:#7a7e7f">(<?php echo $total_comments; ?> reviews)</p>
+            </div>
+            <div class="rating-breakdown mt-2" style="width: 370px;">
+                <?php for ($i = 5; $i >= 1; $i--): ?>
+                <div class="d-flex align-items-center gap-2 mt-1">
+                    <span class="text-m"><?php echo $i; ?> sao</span>
+                    <div class="rating-bar" style="width:254px">
+                        <div class="bar flex-grow-1 rounded" style="height: 5px; background-color: #f2f4f5;position: relative;">
+                            <div class="fill rounded" style="height: 100%; background-color: #F6A500; width: <?php echo ($total_comments > 0) ? ($rating_count[$i] / $total_comments) * 100 : 0; ?>%;"></div>
+                        </div>
+                    </div>
+                    <span class="text-m"><?php echo ($total_comments > 0) ? number_format(($rating_count[$i] / $total_comments) * 100, 1) : 0; ?>%</span>
+                </div>
                 <?php endfor; ?>
             </div>
-            <p>(<?php echo $total_comments; ?> đánh giá)</p>
         </div>
-        <div class="rating-breakdown">
-            <?php for ($i = 5; $i >= 1; $i--): ?>
-                <div class="rating-bar">
-                    <span><?php echo $i; ?> sao</span>
-                    <div class="bar">
-                        <div class="fill" style="width: <?php echo ($total_comments > 0) ? ($rating_count[$i] / $total_comments) * 100 : 0; ?>%;"></div>
-                    </div>
-                    <span><?php echo ($rating_count[$i] > 0) ? $rating_count[$i] : 0; ?> lượt</span>
-                </div>
-            <?php endfor; ?>
+        <div class="col-7 d-flex align-items-center justify-content-center">
+            <a>
+                <button class="custom-btn rounded fw-normal d-flex gap-2 justify-content-center align-items-center" style="width:360px;height:40px;font-size:16.8px">
+                    <i class="fa-solid fa-pen"></i>
+                    Write reviews
+                </button>
+            </a>
         </div>
+        </div>
+
+<?php  comment_list(["Newest", "Best",], 
+                                         'comments', 
+                                         []) ?>
     </div>
 </div>
 
@@ -367,17 +410,17 @@
                          "Sản phẩm liên quan", 
                          ["Series bộ", "Bitex", "First News", "Hương Trang"], 
                          "highlighted-brands", 
-                         [list_products_scrollable($data['bestseller']  = bestseller()),list_products_scrollable($data['bestseller']  = bestseller()),
-                          list_products_scrollable($data['bestseller']  = bestseller()),list_products_scrollable($data['list_products']  = list_products())]) ?>
+                         [list_products_scrollable($data['manga_bestseller']),list_products_scrollable($data['manga_bestseller']),
+                          list_products_scrollable($data['manga_bestseller']),list_products_scrollable($data['manga_bestseller'])]) ?>
 
 
 <!-- list products 2-->
 <?php showScrollableList("https://cdn0.fahasa.com/media/wysiwyg/icon-menu/ico-dochoi_1.png", 
                          "Fahasa Giới Thiệu", 
                          ["Series bộ", "Bitex", "First News", "Hương Trang"], 
-                         "highlighted-brands", 
-                         [list_products_scrollable($data['bestseller']  = bestseller()),list_products_scrollable($data['bestseller']  = bestseller()),
-                          list_products_scrollable($data['bestseller']  = bestseller()),list_products_scrollable($data['list_products']  = list_products())]) ?>
+                         "highlighted-brandss", 
+                         [list_products_scrollable($data['manga_bestseller']),list_products_scrollable($data['manga_bestseller']),
+                          list_products_scrollable($data['manga_bestseller']),list_products_scrollable($data['manga_bestseller'])]) ?>
 
 
 <div style="height:50px"></div>
@@ -415,47 +458,6 @@
         color: #fff;
         background-color: #C92127;
     }
-    .rating-container {
-            max-width: 400px;
-            margin: auto;
-        }
-        .rating-average {
-            text-align: center;
-        }
-        .rating-average h1 {
-            font-size: 48px;
-            margin: 0;
-            color: #C92127;
-        }
-        .rating-average span {
-            font-size: 24px;
-        }
-        .stars {
-            color: #FFD700;
-            font-size: 24px;
-        }
-        .rating-bar {
-            display: flex;
-            align-items: center;
-            margin: 5px 0;
-        }
-        .rating-bar span {
-            flex: 1;
-            text-align: right;
-        }
-        .rating-bar .bar {
-            flex: 5;
-            margin: 0 10px;
-            height: 8px;
-            background-color: #E0E0E0;
-            position: relative;
-        }
-        .rating-bar .bar .fill {
-            height: 100%;
-            background-color: #FFD700;
-            width: 0;
-            position: absolute;
-        }
 </style>
 
 <script>
