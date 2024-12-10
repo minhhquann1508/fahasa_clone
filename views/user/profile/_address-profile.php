@@ -109,11 +109,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     margin-bottom: 15px;
 }
 
-.form-address .form-control {
+.profile-statiscal .form-control {
     border-radius: 5px;
     padding: 25px;
 }
-
 
 .form-address .form-check-label {
     margin-right: 15px;

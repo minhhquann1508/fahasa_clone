@@ -12,6 +12,10 @@
             $main_view = './views/auth/logout.php';
             include_once './views/user/layout.php';
         }
+        public function changePassword() {
+            $main_view = './views/auth/changepass.php';
+            include_once './views/user/layout.php';
+        }
         public function test() {
             $main_view = './views/user/test.php';
             include_once './views/user/layout.php';
