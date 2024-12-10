@@ -15,13 +15,6 @@
                 include_once 'update_product.php';
             }
             break;
-        case 'delete':
-            if($id == null) {
-                die();
-            } else {
-                echo 'Xóa sản phẩm';
-            }
-            break;
         default:
             include_once 'list_product.php';
             break;
