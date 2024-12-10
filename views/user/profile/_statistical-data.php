@@ -24,16 +24,20 @@ if (isset($_POST['update-personal'])) {
 
 <div class="wrapper-statiscal">
     <div class="up-statiscal">
+        <div class="img-row-card">
+            <img src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/background_silver.png" alt="user"
+                class="img-fluid">
+        </div>
         <div class="row">
             <div class="col-md-3 col-sm-6 col-12 mb-4">
-                <div class="card card-statistic-1">
+                <div class="card card-statistic-1 item-box">
                     <div class="card-body">
                         <div class="ml-3">
-                            <div class="card-header">
-                                <h4 class="mb-0">F-Point hiện có</h4>
+                            <div class="card-box">
+                                <h6 class="mb-0">F-Point hiện có</h6>
                             </div>
                             <div class="card-body">
-                                <h3 class="text-primary mb-0">2,300</h3>
+                                <p class="text-primary mb-0">2,300</p>
                             </div>
                         </div>
                     </div>
@@ -41,14 +45,14 @@ if (isset($_POST['update-personal'])) {
             </div>
 
             <div class="col-md-3 col-sm-6 col-12 mb-4">
-                <div class="card card-statistic-1">
+                <div class="card card-statistic-1 item-box">
                     <div class="card-body">
                         <div class="ml-3">
-                            <div class="card-header">
-                                <h4 class="mb-0">Đơn hàng</h4>
+                            <div class="card-box">
+                                <h6 class="mb-0">Đơn hàng</h6>
                             </div>
                             <div class="card-body">
-                                <h3 class="text-danger mb-0">0 đơn hàng</h3>
+                                <p class="text-danger mb-0">0 đơn hàng</p>
                             </div>
                         </div>
                     </div>
@@ -56,14 +60,14 @@ if (isset($_POST['update-personal'])) {
             </div>
 
             <div class="col-md-3 col-sm-6 col-12 mb-4">
-                <div class="card card-statistic-1">
+                <div class="card card-statistic-1 item-box">
                     <div class="card-body">
                         <div class="ml-3">
-                            <div class="card-header">
-                                <h4 class="mb-0">Đã thanh toán</h4>
+                            <div class="card-box">
+                                <h6 class="mb-0">Đã thanh toán</h6>
                             </div>
                             <div class="card-body">
-                                <h3 class="text-success mb-0">0 đ</h3>
+                                <p class="text-success mb-0">0 đ</p>
                             </div>
                         </div>
                     </div>
@@ -71,14 +75,14 @@ if (isset($_POST['update-personal'])) {
             </div>
 
             <div class="col-md-3 col-sm-6 col-12 mb-4">
-                <div class="card card-statistic-1">
+                <div class="card card-statistic-1 item-box">
                     <div class="card-body">
                         <div class="ml-3">
-                            <div class="card-header">
-                                <h4 class="mb-0">Free ship hiện có</h4>
+                            <div class="card-box">
+                                <h6 class="mb-0">Free ship hiện có</h6>
                             </div>
                             <div class="card-body">
-                                <h3 class="text-warning mb-0">0 lần</h3>
+                                <p class="text-warning mb-0">0 lần</p>
                             </div>
                         </div>
                     </div>
@@ -163,9 +167,22 @@ if (isset($_POST['update-personal'])) {
 }
 
 .wrapper-statiscal .up-statiscal {
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
     border-radius: 10px;
     background-color: #fff;
+}
+
+.wrapper-statiscal .up-statiscal .row {
+    padding: 20px;
+}
+
+.wrapper-statiscal .up-statiscal .item-box {
+    background-color: #F2F4F5;
+    border: none;
+    border-radius: 12px;
 }
 
 .wrapper-statiscal .profile-statiscal {
@@ -186,7 +203,7 @@ if (isset($_POST['update-personal'])) {
 
 .profile-statiscal .form-control {
     border-radius: 5px;
-    padding: 25px;
+    padding: 155px;
 }
 
 

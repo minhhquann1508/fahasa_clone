@@ -39,8 +39,7 @@ $user = User::get_UserById($id);
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#change-password" class="nav-link" data-bs-toggle="pill"><i
-                                    class="fa-solid fa-key"></i>
+                            <a href="index.php?page=changePassword" class="nav-link"><i class="fa-solid fa-key"></i>
                                 Đổi mật khẩu</a>
                         </li>
                     </ul>
@@ -74,19 +73,11 @@ $user = User::get_UserById($id);
                 <section class="tab-pane fade" id="address-book">
                     <?php include '_address-profile.php'?>
                 </section>
-                <section class="tab-pane fade" id="change-password">
-                    <?php include '_change-pass.php'?>
-                </section>
                 <section class="tab-pane fade" id="order-history">
-                    <h2 class="h5">Lịch sử đơn hàng</h2>
-                    <ul class="list-group">
-                        <li class="list-group-item">Đơn hàng #12345 - Đã giao</li>
-                        <li class="list-group-item">Đơn hàng #12346 - Đang xử lý</li>
-                        <li class="list-group-item">Đơn hàng #12347 - Đã hủy</li>
-                    </ul>
+                    <?php include 'orders/orders-profile.php'?>
                 </section>
                 <section class="tab-pane fade" id="nofication">
-                    <?php include 'nofication-profile.php'?>
+                    <?php include 'nofication/nofication-profile.php'?>
                 </section>
                 <section class="tab-pane fade" id="account-settings">
                     <h2 class="h5">Cài đặt tài khoản</h2>

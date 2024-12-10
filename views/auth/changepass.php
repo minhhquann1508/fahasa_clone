@@ -7,7 +7,7 @@ if (!isset($_SESSION['user'])) {
     header("Location: index.php?page=login");
     exit;
 }
-$model  = new User();
+$model = new User();
 $id = $_GET['id']?? $_SESSION['user']['id'];
 $user = User::get_UserById($id); 
 
@@ -82,12 +82,16 @@ $err = "";
 
 <style>
 .wrapper-password {
+    max-width: 1200px;
     display: flex;
     flex-direction: column;
     gap: 20px;
     padding: 10px 40px;
     background-color: #fff;
     border-radius: 10px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .wrapper-password .form-password {

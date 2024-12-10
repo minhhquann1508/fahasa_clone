@@ -78,6 +78,28 @@ class User {
             return return_data(false, [], $e->getMessage());
         }
     }
+    public function updatePassword($id, $hashed_password) {
+        try {
+            $conn = Database::get_connection();
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+            $query = "UPDATE user SET password = :password WHERE id = :id";
+            $stmt = $conn->prepare($query);
+            $stmt->bindValue(":password", $hashed_password, PDO::PARAM_STR);
+            $stmt->bindValue(":id", (int)$id, PDO::PARAM_INT);
+    
+            if ($stmt->execute()) {
+                return return_data(true, [], 'Đổi mật khẩu thành công');
+            } else {
+                return return_data(false, [], 'Đổi mật khẩu thất bại');
+            }
+    
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage(); 
+            return return_data(false, [], $e->getMessage());
+        }
+    }
+    
 
     // Cập nhật thông tin cá nhân
     public function updatePersonal($id, $name, $email, $phone, $gender, $day, $month, $year) {
