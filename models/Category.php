@@ -34,7 +34,7 @@
                 $total = $stmt_total->fetch(PDO::FETCH_ASSOC)['total'];
 
                 if($stmt->execute()) {
-                    $categories = $stmt->fetchAll();
+                    $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     return return_data(true, ['categories' => $categories, 'total' => $total], 'Hiển thị danh mục thành công');
                 } else {
                     return return_data(false, [], 'Hiển thị danh mục thất bại');
