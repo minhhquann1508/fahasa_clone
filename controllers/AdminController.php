@@ -36,7 +36,7 @@
         }
 
         public function user() {
-            $main_view = './views/admin/user.php';
+            $main_view = './views/user/user_account.php';
             include_once './views/admin/layout.php';
         }
 
